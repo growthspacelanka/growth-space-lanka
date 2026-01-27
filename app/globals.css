@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased bg-white text-neutral-dark;
+    font-family: var(--font-roboto-condensed), sans-serif;
+  }
+  
+  /* Title font - Barlow Condensed with uppercase */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-barlow-condensed), sans-serif;
+    text-transform: uppercase;
+  }
+  
+  /* Body paragraphs - sentence case */
+  p {
+    text-transform: none;
+    font-weight: normal;
+  }
+  
+  /* Buttons - Barlow Condensed, uppercase, medium weight */
+  button {
+    font-family: var(--font-barlow-condensed), sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  /* Links styled as buttons - Barlow Condensed, uppercase, medium weight */
+  a[class*="rounded-full"],
+  a[class*="bg-primary"],
+  a[class*="bg-accent"] {
+    font-family: var(--font-barlow-condensed), sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  /* Navigation links (menus) - Barlow Condensed, uppercase, medium weight */
+  nav a,
+  nav button {
+    font-family: var(--font-barlow-condensed), sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1440px] mx-auto px-4;
+  }
+}
