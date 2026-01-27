@@ -11,7 +11,14 @@ const HeroSection = () => {
     const { t } = useTranslation();
 
     return (
-        <section className="relative flex items-center justify-center min-h-[100vh] pt-48 pb-20 overflow-hidden">
+        <section 
+            className="relative flex items-center justify-center min-h-[100vh] pt-48 pb-20 overflow-hidden bg-white"
+            style={{
+                backgroundImage: 'repeating-linear-gradient(to right, transparent 0px, transparent 120px, rgba(0, 0, 0, 0.03) 120px, rgba(0, 0, 0, 0.03) 121px)',
+                backgroundPosition: 'center',
+                backgroundSize: '100% 100%',
+            }}
+        >
             <div className="container">
                 <div className="max-w-5xl mx-auto text-center space-y-8 ">
                     {/* Main Heading */}
@@ -54,7 +61,7 @@ const HeroSection = () => {
                         </Link>
                         <Link
                             href="/services"
-                            className="px-8 py-4 border border-gray-200 text-neutral-dark rounded-full text-2xl hover:bg-neutral-light/50 transition-colors duration-200 flex items-center gap-2 group"
+                            className="px-8 py-4 bg-white border border-gray-200 text-neutral-dark rounded-full text-2xl hover:bg-neutral-light/50 transition-colors duration-200 flex items-center gap-2 group"
                         >
                             {t('hero.cta.secondary')}
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />

@@ -13,19 +13,19 @@ interface StatItem {
 
 const stats: StatItem[] = [
     {
-        value: '40+',
+        value: '300+',
         label: 'stats.projects'
     },
     {
-        value: '95%',
+        value: '97%',
         label: 'stats.satisfaction'
     },
     {
-        value: '2+',
+        value: '5+',
         label: 'stats.experience'
     },
     {
-        value: '15+',
+        value: '100+',
         label: 'stats.clients'
     }
 ];
@@ -34,10 +34,10 @@ const StatsSection: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <section className="py-20 bg-primary">
+        <section className="py-28 bg-primary">
             <div className="container">
-                <div className="max-w-6xl mx-auto">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
+                <div className="mx-auto max-w-6xl">
+                    <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
                         {stats.map((stat, index) => (
                             <motion.div
                                 key={stat.label}
@@ -47,14 +47,14 @@ const StatsSection: React.FC = () => {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="text-center"
                             >
-                                <div className="relative inline-block">
+                                <div className="inline-block relative">
                                     <motion.span
-                                        className="text-5xl lg:text-6xl font-bold text-white tracking-tight"
+                                        className="text-6xl font-bold tracking-tight text-white lg:text-7xl"
                                     >
                                         {stat.value}
                                     </motion.span>
                                 </div>
-                                <p className="mt-2 text-xl text-white/80 tracking-tight">
+                                <p className="mt-2 text-xl font-light tracking-tight uppercase text-white/60">
                                     {t(stat.label)}
                                 </p>
                             </motion.div>

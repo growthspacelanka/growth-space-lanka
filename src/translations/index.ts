@@ -392,6 +392,9 @@ export type TranslationKey =
     | 'contact.page.title'
     | 'contact.page.description'
 
+    | 'bookACall.page.title'
+    | 'bookACall.page.description'
+
     | 'contact.form.title'
     | 'contact.form.subtitle'
     | 'contact.form.description'
@@ -921,6 +924,9 @@ export const translations = {
 
         'contact.page.title': 'Contact Us',
         'contact.page.description': 'Get in touch with our team',
+
+        'bookACall.page.title': 'Book a Call',
+        'bookACall.page.description': 'Schedule a consultation with our team',
 
         'contact.form.title': 'Send A Message',
         'contact.form.subtitle': 'How can we help?',

@@ -17,7 +17,7 @@ const barlowCondensed = Barlow_Condensed({
 
 const robotoCondensed = Roboto_Condensed({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['100', '300', '400', '500', '700'],
   variable: '--font-roboto-condensed',
   display: 'swap',
 });
