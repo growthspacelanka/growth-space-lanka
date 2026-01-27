@@ -151,7 +151,7 @@ export default function Header() {
                         ))}
 
                         <Link
-                            href="/get-quote"
+                            href="/book-a-call"
                             className="px-6 py-2.5 bg-primary text-white rounded-full text-2xl hover:bg-primary/90 transition-colors duration-200 tracking-tighter"
                         >
                             {t('nav.getStarted')}
@@ -236,7 +236,7 @@ export default function Header() {
                                 ))}
                                 <div className="px-4 pt-2">
                                     <Link
-                                        href="/get-quote"
+                                        href="/book-a-call"
                                         className="block w-full px-6 py-2.5 bg-primary text-white rounded-full text-2xl tracking-tighter text-center hover:bg-primary/90 transition-colors duration-200"
                                         onClick={closeMenu}
                                     >

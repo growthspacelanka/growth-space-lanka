@@ -35,7 +35,7 @@ const CTASection: React.FC = () => {
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >
                             <Link
-                                href="/get-quote"
+                                href="/book-a-call"
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full text-2xl tracking-tight hover:bg-primary/90 transition-all duration-300 group"
                             >
                                 {t('cta.button')}

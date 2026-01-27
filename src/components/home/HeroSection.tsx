@@ -46,7 +46,7 @@ const HeroSection = () => {
                         className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8"
                     >
                         <Link
-                            href="/get-quote"
+                            href="/book-a-call"
                             className="px-8 py-4 bg-primary text-white rounded-full text-2xl hover:bg-primary/90 transition-colors duration-200 flex items-center gap-2 group"
                         >
                             {t('hero.cta.primary')}
