@@ -31,6 +31,8 @@ const navigation: NavigationItem[] = [
         submenu: [
             { label: content.nav.webDev, href: '/services/web-development' },
             { label: content.nav.ai, href: '/services/ai-solutions' },
+            { label: content.nav.socialMedia, href: '/services/social-media-management' },
+            { label: content.nav.socialAds, href: '/services/social-media-ads' },
         ],
     },
     { label: content.nav.about, href: '/about' },

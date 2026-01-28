@@ -4,7 +4,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Bot, Code2 } from 'lucide-react';
+import { Bot, Code2, Share2, Megaphone } from 'lucide-react';
 import { content } from '@/content';
 
 interface ServiceItem {
@@ -26,6 +26,18 @@ const services: ServiceItem[] = [
         title: content.services.ai.title,
         description: content.services.ai.description,
         href: '/services/ai-solutions'
+    },
+    {
+        icon: <Share2 className="w-10 h-10" />,
+        title: content.services.socialMedia.title,
+        description: content.services.socialMedia.description,
+        href: '/services/social-media-management'
+    },
+    {
+        icon: <Megaphone className="w-10 h-10" />,
+        title: content.services.socialAds.title,
+        description: content.services.socialAds.description,
+        href: '/services/social-media-ads'
     }
 ];
 
@@ -50,7 +62,7 @@ const ServicesOverview: React.FC = () => {
                             <p className="text-3xl font-light text-gray-300 tracking-tight">
                                 {content.services.subtitle}
                             </p>
-                            <p className="text-xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
+                            <p className="text-2xl md:text-3xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
                                 {content.services.description}
                             </p>
                         </div>

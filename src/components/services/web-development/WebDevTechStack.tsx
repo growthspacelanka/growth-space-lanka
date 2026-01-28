@@ -2,82 +2,44 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslation } from '@/hooks/useTranslation';
-import { TranslationKey } from '@/translations';
+import { content } from '@/content';
 import { Database, Layout, Server, Cog, ChevronDown } from 'lucide-react';
 
 interface TechStackItem {
     icon: React.ReactNode;
-    title: TranslationKey;
-    description: TranslationKey;
-    technologies: TranslationKey[];
+    title: string;
+    description: string;
+    technologies: string[];
 }
 
 const techStacks: TechStackItem[] = [
     {
         icon: <Layout className="w-10 h-10" />,
-        title: 'services.webdev.tech.frontend.title',
-        description: 'services.webdev.tech.frontend.description',
-        technologies: [
-            'services.webdev.tech.frontend.tech1',
-            'services.webdev.tech.frontend.tech2',
-            'services.webdev.tech.frontend.tech3',
-            'services.webdev.tech.frontend.tech4',
-            'services.webdev.tech.frontend.tech5',
-            'services.webdev.tech.frontend.tech6',
-            'services.webdev.tech.frontend.tech7',
-            'services.webdev.tech.frontend.tech8'
-        ]
+        title: content.services.webdev.tech.frontend.title,
+        description: content.services.webdev.tech.frontend.description,
+        technologies: content.services.webdev.tech.frontend.technologies,
     },
     {
         icon: <Server className="w-10 h-10" />,
-        title: 'services.webdev.tech.backend.title',
-        description: 'services.webdev.tech.backend.description',
-        technologies: [
-            'services.webdev.tech.backend.tech1',
-            'services.webdev.tech.backend.tech2',
-            'services.webdev.tech.backend.tech3',
-            'services.webdev.tech.backend.tech4',
-            'services.webdev.tech.backend.tech5',
-            'services.webdev.tech.backend.tech6',
-            'services.webdev.tech.backend.tech7',
-            'services.webdev.tech.backend.tech8'
-        ]
+        title: content.services.webdev.tech.backend.title,
+        description: content.services.webdev.tech.backend.description,
+        technologies: content.services.webdev.tech.backend.technologies,
     },
     {
         icon: <Database className="w-10 h-10" />,
-        title: 'services.webdev.tech.database.title',
-        description: 'services.webdev.tech.database.description',
-        technologies: [
-            'services.webdev.tech.database.tech1',
-            'services.webdev.tech.database.tech2',
-            'services.webdev.tech.database.tech3',
-            'services.webdev.tech.database.tech4',
-            'services.webdev.tech.database.tech5',
-            'services.webdev.tech.database.tech6',
-            'services.webdev.tech.database.tech7',
-            'services.webdev.tech.database.tech8'
-        ]
+        title: content.services.webdev.tech.database.title,
+        description: content.services.webdev.tech.database.description,
+        technologies: content.services.webdev.tech.database.technologies,
     },
     {
         icon: <Cog className="w-10 h-10" />,
-        title: 'services.webdev.tech.tools.title',
-        description: 'services.webdev.tech.tools.description',
-        technologies: [
-            'services.webdev.tech.tools.tech1',
-            'services.webdev.tech.tools.tech2',
-            'services.webdev.tech.tools.tech3',
-            'services.webdev.tech.tools.tech4',
-            'services.webdev.tech.tools.tech5',
-            'services.webdev.tech.tools.tech6',
-            'services.webdev.tech.tools.tech7',
-            'services.webdev.tech.tools.tech8'
-        ]
+        title: content.services.webdev.tech.tools.title,
+        description: content.services.webdev.tech.tools.description,
+        technologies: content.services.webdev.tech.tools.technologies,
     }
 ];
 
 const WebDevTechStack = () => {
-    const { t } = useTranslation();
     const [activeTab, setActiveTab] = useState(0);
     const [mobileExpanded, setMobileExpanded] = useState<number | null>(0);
 
@@ -85,10 +47,10 @@ const WebDevTechStack = () => {
         setMobileExpanded(mobileExpanded === index ? null : index);
     };
 
-    const TechnologyItem = ({ tech }: { tech: TranslationKey }) => (
+    const TechnologyItem = ({ tech }: { tech: string }) => (
         <div className="flex items-center space-x-3">
             <div className="w-3 h-3 border border-white/70 rounded-full bg-accent flex-shrink-0" />
-            <span>{t(tech)}</span>
+            <span>{tech}</span>
         </div>
     );
 
@@ -105,14 +67,14 @@ const WebDevTechStack = () => {
                         className="text-center mb-20"
                     >
                         <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tighter">
-                            {t('services.webdev.tech.title')}
+                            {content.services.webdev.tech.title}
                         </h2>
                         <div className="space-y-6">
                             <p className="text-3xl font-light text-gray-300/50 tracking-tight">
-                                {t('services.webdev.tech.subtitle')}
+                                {content.services.webdev.tech.subtitle}
                             </p>
                             <p className="text-xl text-white font-light max-w-3xl mx-auto tracking-tight">
-                                {t('services.webdev.tech.description')}
+                                {content.services.webdev.tech.description}
                             </p>
                         </div>
                     </motion.div>
@@ -145,7 +107,7 @@ const WebDevTechStack = () => {
                                                     {stack.icon}
                                                 </div>
                                                 <h3 className="text-2xl font-bold tracking-tighter">
-                                                    {t(stack.title)}
+                                                    {stack.title}
                                                 </h3>
                                             </div>
                                             <ChevronDown
@@ -167,7 +129,7 @@ const WebDevTechStack = () => {
                                         >
                                             <div className="p-6 pt-4 space-y-4">
                                                 <p className="text-xl text-white/70 tracking-tighter">
-                                                    {t(stack.description)}
+                                                    {stack.description}
                                                 </p>
                                                 <div className="space-y-3">
                                                     {stack.technologies.map((tech) => (
@@ -204,7 +166,7 @@ const WebDevTechStack = () => {
                                         {stack.icon}
                                     </div>
                                     <span className="text-xl font-medium">
-                                        {t(stack.title)}
+                                        {stack.title}
                                     </span>
                                 </motion.button>
                             ))}
@@ -221,10 +183,10 @@ const WebDevTechStack = () => {
                             >
                                 <div className="mb-8">
                                     <h3 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-4">
-                                        {t(techStacks[activeTab].title)}
+                                        {techStacks[activeTab].title}
                                     </h3>
                                     <p className="text-2xl text-white/70 tracking-tighter">
-                                        {t(techStacks[activeTab].description)}
+                                        {techStacks[activeTab].description}
                                     </p>
                                 </div>
 

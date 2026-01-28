@@ -18,18 +18,18 @@ const HeroSection = () => {
             }}
         >
             <div className="container">
-                <div className="max-w-5xl mx-auto text-center space-y-8 ">
+                <div className="mx-auto space-y-8 max-w-5xl text-center">
                     {/* Main Heading */}
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.1 }}
-                        className="text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter"
+                        className="text-5xl font-bold tracking-tighter md:text-6xl lg:text-8xl"
                     >
                         {content.hero.title.start}
-                        <span className="tracking-tighter ">{content.hero.title.highlight1}</span>
-                        {content.hero.title.middle}
-                        <span className="text-accent tracking-tighter">{content.hero.title.highlight2}</span>
+                        <span className="tracking-tighter text-accent">{content.hero.title.highlight1}</span>
+                        <span className="tracking-tighter text-accent">{content.hero.title.middle}</span>
+                        {content.hero.title.highlight2}
                     </motion.h1>
 
 
@@ -38,7 +38,7 @@ const HeroSection = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.1, delay: 0.2 }}
-                        className="text-xl md:text-3xl text-gray-500 font-light tracking-tighter max-w-3xl mx-auto"
+                        className="mx-auto max-w-3xl text-xl font-light tracking-tighter text-gray-500 md:text-3xl"
                     >
                         {content.hero.subtitle}
                     </motion.p>
@@ -48,21 +48,21 @@ const HeroSection = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.1, delay: 0.3 }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8"
+                        className="flex flex-col gap-4 justify-center items-center pt-8 sm:flex-row"
                     >
                         <Link
                             href="/book-a-call"
-                            className="px-8 py-4 bg-primary text-white rounded-full text-2xl hover:bg-primary/90 transition-colors duration-200 flex items-center gap-2 group"
+                            className="flex gap-2 items-center px-8 py-4 text-2xl text-white rounded-full transition-colors duration-200 bg-primary hover:bg-primary/90 group"
                         >
                             {content.hero.cta.primary}
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                            <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                         </Link>
                         <Link
                             href="/services"
-                            className="px-8 py-4 bg-white border border-gray-200 text-neutral-dark rounded-full text-2xl hover:bg-neutral-light/50 transition-colors duration-200 flex items-center gap-2 group"
+                            className="flex gap-2 items-center px-8 py-4 text-2xl bg-white rounded-full border border-gray-200 transition-colors duration-200 text-neutral-dark hover:bg-neutral-light/50 group"
                         >
                             {content.hero.cta.secondary}
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                            <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                         </Link>
                     </motion.div>
                 </div>
@@ -74,13 +74,13 @@ const HeroSection = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 0.1 }}
                     transition={{ duration: 1 }}
-                    className="absolute top-20 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"
+                    className="absolute top-20 left-1/4 w-96 h-96 rounded-full blur-3xl bg-primary"
                 />
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 0.1 }}
                     transition={{ duration: 1, delay: 0.5 }}
-                    className="absolute bottom-20 right-1/4 w-96 h-96 bg-accent rounded-full blur-3xl"
+                    className="absolute bottom-20 right-1/4 w-96 h-96 rounded-full blur-3xl bg-accent"
                 />
             </div> */}
         </section>

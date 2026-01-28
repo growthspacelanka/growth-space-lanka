@@ -2,76 +2,35 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslation } from '@/hooks/useTranslation';
-import { TranslationKey } from '@/translations';
+import { content } from '@/content';
 import { ChevronDown } from 'lucide-react';
 
 interface FAQItem {
-    question: TranslationKey;
-    answer: TranslationKey;
+    question: string;
+    answer: string;
 }
 
 interface FAQCategory {
-    title: TranslationKey;
+    title: string;
     faqs: FAQItem[];
 }
 
 const faqCategories: FAQCategory[] = [
     {
-        title: 'services.webdev.faq.process.title',
-        faqs: [
-            {
-                question: 'services.webdev.faq.process.q1',
-                answer: 'services.webdev.faq.process.a1'
-            },
-            {
-                question: 'services.webdev.faq.process.q2',
-                answer: 'services.webdev.faq.process.a2'
-            },
-            {
-                question: 'services.webdev.faq.process.q3',
-                answer: 'services.webdev.faq.process.a3'
-            }
-        ]
+        title: 'Process & Timeline',
+        faqs: content.services.webdev.faq.process.items,
     },
     {
-        title: 'services.webdev.faq.technical.title',
-        faqs: [
-            {
-                question: 'services.webdev.faq.technical.q1',
-                answer: 'services.webdev.faq.technical.a1'
-            },
-            {
-                question: 'services.webdev.faq.technical.q2',
-                answer: 'services.webdev.faq.technical.a2'
-            },
-            {
-                question: 'services.webdev.faq.technical.q3',
-                answer: 'services.webdev.faq.technical.a3'
-            }
-        ]
+        title: 'Technical Questions',
+        faqs: content.services.webdev.faq.technical.items,
     },
     {
-        title: 'services.webdev.faq.collaboration.title',
-        faqs: [
-            {
-                question: 'services.webdev.faq.collaboration.q1',
-                answer: 'services.webdev.faq.collaboration.a1'
-            },
-            {
-                question: 'services.webdev.faq.collaboration.q2',
-                answer: 'services.webdev.faq.collaboration.a2'
-            },
-            {
-                question: 'services.webdev.faq.collaboration.q3',
-                answer: 'services.webdev.faq.collaboration.a3'
-            }
-        ]
+        title: 'Working Together',
+        faqs: content.services.webdev.faq.collaboration.items,
     }
 ];
 
 const WebDevFAQ = () => {
-    const { t } = useTranslation();
     const [expandedCategory, setExpandedCategory] = useState<number>(0);
     const [expandedQuestions, setExpandedQuestions] = useState<Record<number, number | null>>({
         0: 0,
@@ -99,14 +58,14 @@ const WebDevFAQ = () => {
                         className="text-center mb-20"
                     >
                         <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
-                            {t('services.webdev.faq.title')}
+                            {content.services.webdev.faq.title}
                         </h2>
                         <div className="space-y-6">
                             <p className="text-3xl font-light text-gray-300  tracking-tight">
-                                {t('services.webdev.faq.subtitle')}
+                                {content.services.webdev.faq.subtitle}
                             </p>
                             <p className="text-xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
-                                {t('services.webdev.faq.description')}
+                                {content.services.webdev.faq.description}
                             </p>
                         </div>
                     </motion.div>
@@ -129,7 +88,7 @@ const WebDevFAQ = () => {
                                 >
                                     <div className="flex items-center justify-between">
                                         <h3 className="text-3xl font-bold text-primary tracking-tighter">
-                                            {t(category.title)}
+                                            {category.title}
                                         </h3>
                                         <ChevronDown
                                             className={`w-8 h-8 text-primary transition-transform duration-300 ${expandedCategory === categoryIndex ? 'rotate-180' : ''
@@ -157,7 +116,7 @@ const WebDevFAQ = () => {
                                                         >
                                                             <div className="flex items-start justify-between">
                                                                 <p className="text-2xl  font-medium tracking-tighter pr-8">
-                                                                    {t(faq.question)}
+                                                                    {faq.question}
                                                                 </p>
                                                                 <ChevronDown
                                                                     className={`w-6 h-6 text-primary flex-shrink-0 transition-transform duration-300 ${expandedQuestions[categoryIndex] === questionIndex ? 'rotate-180' : ''
@@ -175,7 +134,7 @@ const WebDevFAQ = () => {
                                                                     className="overflow-hidden"
                                                                 >
                                                                     <p className="pb-4 text-xl text-gray-400 font-light tracking-tighter">
-                                                                        {t(faq.answer)}
+                                                                        {faq.answer}
                                                                     </p>
                                                                 </motion.div>
                                                             )}

@@ -2,41 +2,39 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useTranslation } from '@/hooks/useTranslation';
-import { TranslationKey } from '@/translations';
-import { Laptop, Code, ShoppingBag, Layout } from 'lucide-react';
+import { content } from '@/content';
+import { Laptop, Mail, Smartphone, Edit } from 'lucide-react';
 
 interface FeatureItem {
     icon: React.ReactNode;
-    title: TranslationKey;
-    description: TranslationKey;
+    title: string;
+    description: string;
 }
 
 const features: FeatureItem[] = [
     {
         icon: <Laptop className="w-10 h-10" />,
-        title: 'services.webdev.features.custom.title',
-        description: 'services.webdev.features.custom.description'
+        title: content.services.webdev.features.items[0].title,
+        description: content.services.webdev.features.items[0].description,
     },
     {
-        icon: <Code className="w-10 h-10" />,
-        title: 'services.webdev.features.application.title',
-        description: 'services.webdev.features.application.description'
+        icon: <Mail className="w-10 h-10" />,
+        title: content.services.webdev.features.items[1].title,
+        description: content.services.webdev.features.items[1].description,
     },
     {
-        icon: <ShoppingBag className="w-10 h-10" />,
-        title: 'services.webdev.features.ecommerce.title',
-        description: 'services.webdev.features.ecommerce.description'
+        icon: <Smartphone className="w-10 h-10" />,
+        title: content.services.webdev.features.items[2].title,
+        description: content.services.webdev.features.items[2].description,
     },
     {
-        icon: <Layout className="w-10 h-10" />,
-        title: 'services.webdev.features.cms.title',
-        description: 'services.webdev.features.cms.description'
+        icon: <Edit className="w-10 h-10" />,
+        title: content.services.webdev.features.items[3].title,
+        description: content.services.webdev.features.items[3].description,
     }
 ];
 
 const WebDevFeatures = () => {
-    const { t } = useTranslation();
 
     return (
         <section className="py-20 md:py-40 bg-white">
@@ -51,14 +49,14 @@ const WebDevFeatures = () => {
                         className="text-center mb-20"
                     >
                         <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
-                            {t('services.webdev.features.title')}
+                            {content.services.webdev.features.title}
                         </h2>
                         <div className="space-y-6">
                             <p className="text-3xl font-light text-gray-300 tracking-tight">
-                                {t('services.webdev.features.subtitle')}
+                                {content.services.webdev.features.subtitle}
                             </p>
                             <p className="text-xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
-                                {t('services.webdev.features.description')}
+                                {content.services.webdev.features.description}
                             </p>
                         </div>
                     </motion.div>
@@ -81,10 +79,10 @@ const WebDevFeatures = () => {
 
                                 </div>
                                 <h3 className="text-4xl md:text-5xl font-bold mb-4 text-primary tracking-tighter">
-                                    {t(feature.title)}
+                                    {feature.title}
                                 </h3>
                                 <p className="text-2xl text-neutral-medium font-light tracking-tight">
-                                    {t(feature.description)}
+                                    {feature.description}
                                 </p>
                             </motion.div>
                         ))}
