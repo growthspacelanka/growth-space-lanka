@@ -3,35 +3,10 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useTranslation } from '@/hooks/useTranslation';
-import { TranslationKey } from '@/translations';
-
-interface StatItem {
-    value: string;
-    label: TranslationKey;
-}
-
-const stats: StatItem[] = [
-    {
-        value: '300+',
-        label: 'stats.projects'
-    },
-    {
-        value: '97%',
-        label: 'stats.satisfaction'
-    },
-    {
-        value: '5+',
-        label: 'stats.experience'
-    },
-    {
-        value: '100+',
-        label: 'stats.clients'
-    }
-];
+import { content } from '@/content';
 
 const StatsSection: React.FC = () => {
-    const { t } = useTranslation();
+    const stats = content.stats.items;
 
     return (
         <section className="py-28 bg-primary">
@@ -55,7 +30,7 @@ const StatsSection: React.FC = () => {
                                     </motion.span>
                                 </div>
                                 <p className="mt-2 text-xl font-light tracking-tight uppercase text-white/60">
-                                    {t(stat.label)}
+                                    {stat.label}
                                 </p>
                             </motion.div>
                         ))}

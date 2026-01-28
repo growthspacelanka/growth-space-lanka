@@ -3,11 +3,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useTranslation } from '@/hooks/useTranslation';
+import { content } from '@/content';
 
 const CookieConsent: React.FC = () => {
     const [consentGiven, setConsentGiven] = useState<boolean | null>(null);
-    const { t } = useTranslation();
 
     useEffect(() => {
         const storedConsent = localStorage.getItem('cookieConsent');
@@ -31,10 +30,10 @@ const CookieConsent: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="fixed bottom-0 md:bottom-8 right-0 md:right-8 bg-white border border-gray-400/10 shadow-lg shadow-primary/10 rounded-none md:rounded-xl p-4 md:p-8 max-w-md z-50"
         >
-            <p className="text-gray-600 text-center text-xl tracking-tighter mb-4 leading-5">{t('cookie.text')}
+            <p className="text-gray-600 text-center text-xl tracking-tighter mb-4 leading-5">{content.cookie.text}
 
                 <span> <a href="/privacy" className="text-primary hover:underline">
-                    {t('cookie.link')}
+                    {content.cookie.link}
                 </a></span>
             </p>
             <div className="flex justify-center items-center text-center pt-4">
@@ -43,13 +42,13 @@ const CookieConsent: React.FC = () => {
                         onClick={() => handleConsent(false)}
                         className="text-gray-600 px-6 py-2 text-xl tracking-tighter border rounded-full mb-2 w-full md:w-auto hover:bg-gray-100 transition-colors duration-300"
                     >
-                        {t('cookie.deny')}
+                        {content.cookie.deny}
                     </button>
                     <button
                         onClick={() => handleConsent(true)}
                         className="bg-primary hover:bg-primary/90 text-white px-6 py-2 text-xl w-full md:w-auto tracking-tighter rounded-full md:ml-4 hover:bg-primary-dark transition-colors duration-300"
                     >
-                        {t('cookie.accept')}
+                        {content.cookie.accept}
                     </button>
                 </div>
             </div>

@@ -1,41 +1,13 @@
-// src/hooks/useTranslation.tsx
+// Minimal fallback - returns empty string for unused translation keys
+// This allows components that haven't been migrated yet to still work
 'use client';
 
-import React, { createContext, useContext, type ReactNode } from 'react';
-import { translations, TranslationKey } from '@/translations';
-
-interface TranslationContextValue {
-  t: (key: TranslationKey) => string;
-}
-
-const TranslationContext = createContext<TranslationContextValue>({
-  t: (key: TranslationKey) => key,
-});
-
-interface TranslationProviderProps {
-  children: ReactNode;
-}
-
-export function TranslationProvider({ children }: TranslationProviderProps) {
-  const t = (key: TranslationKey): string => {
-    return translations.en[key] || key;
+export function useTranslation() {
+  return {
+    t: (key: string) => {
+      // Return empty string for now - these components should be migrated to content.ts
+      console.warn(`Translation key "${key}" is deprecated. Please migrate to content.ts`);
+      return '';
+    },
   };
-
-  const contextValue: TranslationContextValue = {
-    t,
-  };
-
-  return (
-    <TranslationContext.Provider value={contextValue}>
-      {children}
-    </TranslationContext.Provider>
-  );
-}
-
-export function useTranslation(): TranslationContextValue {
-  const context = useContext(TranslationContext);
-  if (!context) {
-    throw new Error('useTranslation must be used within a TranslationProvider');
-  }
-  return context;
 }

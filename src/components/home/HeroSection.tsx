@@ -5,13 +5,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { useTranslation } from '@/hooks/useTranslation';
+import { content } from '@/content';
 
 const HeroSection = () => {
-    const { t } = useTranslation();
-
     return (
-        <section 
+        <section
             className="relative flex items-center justify-center min-h-[100vh] pt-48 pb-20 overflow-hidden bg-white"
             style={{
                 backgroundImage: 'repeating-linear-gradient(to right, transparent 0px, transparent 120px, rgba(0, 0, 0, 0.03) 120px, rgba(0, 0, 0, 0.03) 121px)',
@@ -28,10 +26,10 @@ const HeroSection = () => {
                         transition={{ duration: 0.1 }}
                         className="text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter"
                     >
-                        {t('hero.title.start')}
-                        <span className="tracking-tighter ">{t('hero.title.highlight1')}</span>
-                        {t('hero.title.middle')}
-                        <span className="text-accent tracking-tighter">{t('hero.title.highlight2')}</span>
+                        {content.hero.title.start}
+                        <span className="tracking-tighter ">{content.hero.title.highlight1}</span>
+                        {content.hero.title.middle}
+                        <span className="text-accent tracking-tighter">{content.hero.title.highlight2}</span>
                     </motion.h1>
 
 
@@ -42,7 +40,7 @@ const HeroSection = () => {
                         transition={{ duration: 0.1, delay: 0.2 }}
                         className="text-xl md:text-3xl text-gray-500 font-light tracking-tighter max-w-3xl mx-auto"
                     >
-                        {t('hero.subtitle')}
+                        {content.hero.subtitle}
                     </motion.p>
 
                     {/* CTA Buttons */}
@@ -56,14 +54,14 @@ const HeroSection = () => {
                             href="/book-a-call"
                             className="px-8 py-4 bg-primary text-white rounded-full text-2xl hover:bg-primary/90 transition-colors duration-200 flex items-center gap-2 group"
                         >
-                            {t('hero.cta.primary')}
+                            {content.hero.cta.primary}
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                         </Link>
                         <Link
                             href="/services"
                             className="px-8 py-4 bg-white border border-gray-200 text-neutral-dark rounded-full text-2xl hover:bg-neutral-light/50 transition-colors duration-200 flex items-center gap-2 group"
                         >
-                            {t('hero.cta.secondary')}
+                            {content.hero.cta.secondary}
                             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                         </Link>
                     </motion.div>

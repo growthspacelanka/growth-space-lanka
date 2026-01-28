@@ -4,11 +4,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useTranslation } from '@/hooks/useTranslation';
+import { content } from '@/content';
 import { CheckCircle } from 'lucide-react';
 
 const ThankYou = () => {
-    const { t } = useTranslation();
 
     return (
         <section className="py-20 md:py-40 bg-white min-h-screen flex items-center">
@@ -25,11 +24,11 @@ const ThankYou = () => {
                         </div>
 
                         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
-                            {t('thankYou.title')}
+                            {content.thankYou.title}
                         </h1>
 
                         <p className="text-xl text-gray-500 font-light">
-                            {t('thankYou.description')}
+                            {content.thankYou.description}
                         </p>
 
                         <div className="pt-8">
@@ -37,7 +36,7 @@ const ThankYou = () => {
                                 href="/"
                                 className="inline-flex px-8 py-4 bg-primary text-white rounded-full text-lg hover:opacity-90 transition-all duration-300"
                             >
-                                {t('thankYou.backHome')}
+                                {content.thankYou.backHome}
                             </Link>
                         </div>
                     </motion.div>

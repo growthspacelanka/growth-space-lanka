@@ -13,10 +13,9 @@ import {
     Phone,
     Twitter
 } from 'lucide-react';
-import { useTranslation } from '@/hooks/useTranslation';
+import { content } from '@/content';
 
 const Footer: React.FC = () => {
-    const { t } = useTranslation();
 
     return (
         <footer className="bg-white pt-20 pb-10">
@@ -36,7 +35,7 @@ const Footer: React.FC = () => {
                                 />
                             </Link>
                             <p className="text-gray-500 tracking-tighter text-lg">
-                                {t('footer.description')}
+                                {content.footer.description}
                             </p>
                             {/* Social Links */}
                             <div className="flex justify-left gap-6 mb-12">
@@ -61,21 +60,21 @@ const Footer: React.FC = () => {
 
                         {/* Quick Links */}
                         <div>
-                            <h3 className="text-2xl tracking-tighter font-bold mb-6">{t('footer.quickLinks')}</h3>
+                            <h3 className="text-2xl tracking-tighter font-bold mb-6">{content.footer.quickLinks}</h3>
                             <ul className="space-y-4">
                                 <li>
                                     <Link href="/about" className="text-gray-500 tracking-tighter text-lg hover:text-primary transition-colors">
-                                        {t('footer.about')}
+                                        {content.footer.about}
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="/services" className="text-gray-500 tracking-tighter text-lg hover:text-primary transition-colors">
-                                        {t('footer.services')}
+                                        {content.footer.services}
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="/contact" className="text-gray-500 tracking-tighter text-lg hover:text-primary transition-colors">
-                                        {t('footer.contact')}
+                                        {content.footer.contact}
                                     </Link>
                                 </li>
                             </ul>
@@ -83,16 +82,16 @@ const Footer: React.FC = () => {
 
                         {/* Services */}
                         <div>
-                            <h3 className="text-2xl tracking-tighter font-bold mb-6">{t('footer.services')}</h3>
+                            <h3 className="text-2xl tracking-tighter font-bold mb-6">{content.footer.services}</h3>
                             <ul className="space-y-4">
                                 <li>
                                     <Link href="/services/web-development" className="text-gray-500 tracking-tighter text-lg hover:text-primary transition-colors">
-                                        {t('footer.webDev')}
+                                        {content.footer.webDev}
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="/services/ai-solutions" className="text-gray-500 tracking-tighter text-lg hover:text-primary transition-colors">
-                                        {t('footer.ai')}
+                                        {content.footer.ai}
                                     </Link>
                                 </li>
                             </ul>
@@ -100,7 +99,7 @@ const Footer: React.FC = () => {
 
                         {/* Contact Info */}
                         <div>
-                            <h3 className="text-2xl tracking-tighter font-bold mb-6">{t('footer.contact')}</h3>
+                            <h3 className="text-2xl tracking-tighter font-bold mb-6">{content.footer.contact}</h3>
                             <ul className="space-y-4">
                                 <li className="flex gap-2 text-gray-500 tracking-tighter text-lg">
                                     <div className="flex-none w-5 h-5">
@@ -127,7 +126,7 @@ const Footer: React.FC = () => {
                                         <MapPin className="w-full h-full" />
                                     </div>
                                     <div className="flex-1">
-                                        <span>{t('footer.address')}</span>
+                                        <span>{content.footer.address}</span>
                                     </div>
                                 </li>
                             </ul>
@@ -141,17 +140,17 @@ const Footer: React.FC = () => {
                     <div className="border-t border-gray-100 pt-8">
                         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                             <p className="text-gray-500 text-sm tracking-tighter">
-                                © {new Date().getFullYear()} {t('footer.copyright')}
+                                © {new Date().getFullYear()} {content.footer.copyright}
                             </p>
                             <div className="flex gap-6 text-sm tracking-tighter">
                                 <Link href="/privacy" className="text-gray-500 hover:text-primary transition-colors">
-                                    {t('footer.privacy')}
+                                    {content.footer.privacy}
                                 </Link>
                                 <Link href="/terms" className="text-gray-500 hover:text-primary transition-colors">
-                                    {t('footer.terms')}
+                                    {content.footer.terms}
                                 </Link>
                                 <Link href="/imprint" className="text-gray-500 hover:text-primary transition-colors">
-                                    {t('footer.imprint')}
+                                    {content.footer.imprint}
                                 </Link>
                             </div>
                         </div>

@@ -3,30 +3,28 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useTranslation } from '@/hooks/useTranslation';
+import { content } from '@/content';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 const ContactInfo = () => {
-    const { t } = useTranslation();
-
     const contactDetails = [
         {
             icon: <Mail className="w-8 h-8 md:w-10 md:h-10" />,
-            title: t('contact.info.email.title'),
-            content: 'hello@gotomarket.de',
-            link: 'mailto:hello@gotomarket.de'
+            title: content.contact.info.email.title,
+            content: content.contact.info.email.content,
+            link: content.contact.info.email.link,
         },
         {
             icon: <Phone className="w-8 h-8 md:w-10 md:h-10" />,
-            title: t('contact.info.phone.title'),
-            content: '+49 123 456 789',
-            link: 'tel:+49123456789'
+            title: content.contact.info.phone.title,
+            content: content.contact.info.phone.content,
+            link: content.contact.info.phone.link,
         },
         {
             icon: <MapPin className="w-8 h-8 md:w-10 md:h-10" />,
-            title: t('contact.info.address.title'),
-            content: t('contact.info.address.content'),
-            link: 'https://maps.google.com'
+            title: content.contact.info.address.title,
+            content: content.contact.info.address.content,
+            link: content.contact.info.address.link,
         }
     ];
 
@@ -43,10 +41,10 @@ const ContactInfo = () => {
                         className="text-center mb-16 md:mb-24"
                     >
                         <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter font-barlow-condensed uppercase">
-                            {t('contact.info.title')}
+                            {content.contact.info.title}
                         </h2>
                         <p className="text-xl md:text-2xl text-gray-500 font-light mt-6 uppercase tracking-tight">
-                            {t('contact.info.description')}
+                            {content.contact.info.description}
                         </p>
                     </motion.div>
 

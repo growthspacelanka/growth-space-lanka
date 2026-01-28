@@ -4,7 +4,6 @@ import { Barlow_Condensed, Roboto_Condensed } from 'next/font/google';
 import Header from '@/components/common/header';
 import Footer from '@/components/common/footer';
 import './globals.css';
-import { TranslationProvider } from '@/hooks/useTranslation';
 import CookieConsent from '@/components/common/CookieConsent';
 
 // Load fonts
@@ -43,16 +42,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body 
+      <body
         suppressHydrationWarning
         className={`${barlowCondensed.variable} ${robotoCondensed.variable} antialiased bg-white text-neutral-dark`}
       >
-        <TranslationProvider>
-          <Header />
-          {children}
-          <CookieConsent />
-          <Footer />
-        </TranslationProvider>
+        <Header />
+        {children}
+        <CookieConsent />
+        <Footer />
       </body>
     </html>
   );

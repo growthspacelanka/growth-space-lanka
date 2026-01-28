@@ -4,11 +4,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useTranslation } from '@/hooks/useTranslation';
+import { content } from '@/content';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
 
 const QuoteThankYou = () => {
-    const { t } = useTranslation();
 
     return (
         <section className="py-20 md:py-40 bg-white min-h-screen">
@@ -20,7 +19,7 @@ const QuoteThankYou = () => {
                         className="inline-flex items-center gap-2 text-primary mb-12 hover:opacity-80 transition-all duration-300 tracking-tighter"
                     >
                         <ArrowLeft className="w-5 h-5" />
-                        {t('quote.thankyou.backHome')}
+                        {content.quoteThankYou.backHome}
                     </Link>
 
                     <motion.div
@@ -42,13 +41,13 @@ const QuoteThankYou = () => {
                         {/* Content */}
                         <div className="space-y-6">
                             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary tracking-tighter">
-                                {t('quote.thankyou.title')}
+                                {content.quoteThankYou.title}
                             </h1>
                             <p className="text-3xl font-light text-gray-300 tracking-tight">
-                                {t('quote.thankyou.subtitle')}
+                                {content.quoteThankYou.subtitle}
                             </p>
                             <p className="text-xl text-gray-500 font-light max-w-2xl mx-auto">
-                                {t('quote.thankyou.description')}
+                                {content.quoteThankYou.description}
                             </p>
                         </div>
 
@@ -58,7 +57,7 @@ const QuoteThankYou = () => {
                                 href="/"
                                 className="inline-flex px-12 py-4 bg-primary text-white rounded-full text-xl hover:opacity-90 transition-all duration-300"
                             >
-                                {t('quote.thankyou.returnHome')}
+                                {content.quoteThankYou.returnHome}
                             </Link>
                         </div>
                     </motion.div>

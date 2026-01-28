@@ -2,12 +2,13 @@
 
 import React from 'react';
 import PageHeader from '@/components/common/PageHeader';
+import { content } from '@/content';
 
 const ServicesHero = () => {
     return (
         <PageHeader
-            titleKey="services.page.title"
-            descriptionKey="services.page.description"
+            title={content.services.title}
+            description={content.services.subtitle}
         />
     );
 };

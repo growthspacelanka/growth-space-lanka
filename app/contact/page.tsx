@@ -3,13 +3,14 @@
 import React from 'react';
 import PageHeader from '@/components/common/PageHeader';
 import ContactInfo from '@/components/contact/ContactInfo';
+import { content } from '@/content';
 
 export default function ContactPage() {
     return (
         <>
             <PageHeader
-                titleKey="contact.page.title"
-                descriptionKey="contact.page.description"
+                title={content.contact.page.title}
+                description={content.contact.page.description}
             />
             <ContactInfo />
         </>

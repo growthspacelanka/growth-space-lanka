@@ -11,8 +11,8 @@ const TermsPage = () => {
     return (
         <>
             <PageHeader
-                titleKey="legal.terms.title"
-                descriptionKey="legal.terms.description"
+                title="Terms of Service"
+                description="General terms and conditions for our services"
             />
 
             <section className="py-20 md:py-40 bg-white">

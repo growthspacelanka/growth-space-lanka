@@ -11,8 +11,8 @@ const ImprintPage = () => {
     return (
         <>
             <PageHeader
-                titleKey="legal.imprint.title"
-                descriptionKey="legal.imprint.description"
+                title="Imprint"
+                description="Legal information about our company"
             />
 
             <section className="py-20 md:py-40 bg-white">

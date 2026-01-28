@@ -11,8 +11,8 @@ const PrivacyPolicyPage = () => {
     return (
         <>
             <PageHeader
-                titleKey="legal.privacy.title"
-                descriptionKey="legal.privacy.description"
+                title="Privacy Policy"
+                description="Information about how we handle your data"
             />
 
             <section className="py-20 md:py-40 bg-white">

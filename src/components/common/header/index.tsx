@@ -5,14 +5,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence, HTMLMotionProps } from 'framer-motion';
-import { useTranslation } from '@/hooks/useTranslation';
-import { TranslationKey } from '@/translations';
+import { content } from '@/content';
 
 interface NavigationItem {
-    key: TranslationKey;
+    label: string;
     href: string;
     submenu?: Array<{
-        key: TranslationKey;
+        label: string;
         href: string;
     }>;
 }
@@ -25,24 +24,23 @@ const MotionDiv = motion.div as React.FC<MotionDivProps>;
 const MotionSpan = motion.span as React.FC<HTMLMotionProps<"span">>;
 
 const navigation: NavigationItem[] = [
-    { key: 'nav.home', href: '/' },
+    { label: content.nav.home, href: '/' },
     {
-        key: 'nav.services',
+        label: content.nav.services,
         href: '#',
         submenu: [
-            { key: 'nav.webDev', href: '/services/web-development' },
-            { key: 'nav.ai', href: '/services/ai-solutions' },
+            { label: content.nav.webDev, href: '/services/web-development' },
+            { label: content.nav.ai, href: '/services/ai-solutions' },
         ],
     },
-    { key: 'nav.about', href: '/about' },
-    { key: 'nav.contact', href: '/contact' },
+    { label: content.nav.about, href: '/about' },
+    { label: content.nav.contact, href: '/contact' },
 ];
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [activeDropdown, setActiveDropdown] = useState<TranslationKey | null>(null);
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const [isScrolled, setIsScrolled] = useState(false);
-    const { t } = useTranslation();
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -65,8 +63,8 @@ export default function Header() {
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    const toggleDropdown = (key: TranslationKey) => {
-        setActiveDropdown(activeDropdown === key ? null : key);
+    const toggleDropdown = (label: string) => {
+        setActiveDropdown(activeDropdown === label ? null : label);
     };
 
     const closeMenu = () => {
@@ -98,23 +96,23 @@ export default function Header() {
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center space-x-8">
                         {navigation.map((item) => (
-                            <div key={item.key} className="relative" ref={dropdownRef}>
+                            <div key={item.label} className="relative" ref={dropdownRef}>
                                 {item.submenu ? (
                                     <div>
                                         <button
-                                            onClick={() => toggleDropdown(item.key)}
+                                            onClick={() => toggleDropdown(item.label)}
                                             className="flex items-center text-gray-800 hover:text-primary transition-colors duration-200 text-2xl tracking-tighter"
                                         >
-                                            {t(item.key)}
+                                            {item.label}
                                             <MotionSpan
-                                                animate={{ rotate: activeDropdown === item.key ? 180 : 0 }}
+                                                animate={{ rotate: activeDropdown === item.label ? 180 : 0 }}
                                                 transition={{ duration: 0.2 }}
                                             >
                                                 <ChevronDown className="ml-1 h-4 w-4" />
                                             </MotionSpan>
                                         </button>
                                         <AnimatePresence>
-                                            {activeDropdown === item.key && (
+                                            {activeDropdown === item.label && (
                                                 <MotionDiv
                                                     initial={{ opacity: 0, y: -10 }}
                                                     animate={{ opacity: 1, y: 0 }}
@@ -127,12 +125,12 @@ export default function Header() {
                                                 >
                                                     {item.submenu.map((subitem) => (
                                                         <Link
-                                                            key={subitem.key}
+                                                            key={subitem.label}
                                                             href={subitem.href}
                                                             className="block px-4 text-2xl tracking-tighter py-2 text-gray-800 hover:text-primary hover:bg-gray-50 transition-colors duration-200"
                                                             onClick={() => setActiveDropdown(null)}
                                                         >
-                                                            {t(subitem.key)}
+                                                            {subitem.label}
                                                         </Link>
                                                     ))}
                                                 </MotionDiv>
@@ -144,7 +142,7 @@ export default function Header() {
                                         href={item.href}
                                         className="text-gray-800 hover:text-primary transition-colors duration-200 text-2xl tracking-tighter"
                                     >
-                                        {t(item.key)}
+                                        {item.label}
                                     </Link>
                                 )}
                             </div>
@@ -154,7 +152,7 @@ export default function Header() {
                             href="/book-a-call"
                             className="px-6 py-2.5 bg-primary text-white rounded-full text-2xl hover:bg-primary/90 transition-colors duration-200 tracking-tighter"
                         >
-                            {t('nav.getStarted')}
+                            {content.nav.getStarted}
                         </Link>
                     </nav>
 
@@ -185,23 +183,23 @@ export default function Header() {
                         >
                             <nav className="flex flex-col space-y-4 py-4">
                                 {navigation.map((item) => (
-                                    <div key={item.key}>
+                                    <div key={item.label}>
                                         {item.submenu ? (
                                             <div>
                                                 <button
-                                                    onClick={() => toggleDropdown(item.key)}
+                                                    onClick={() => toggleDropdown(item.label)}
                                                     className="flex items-center justify-between w-full px-4 py-2 text-gray-800 hover:text-primary tracking-tighter"
                                                 >
-                                                    <span className="text-2xl">{t(item.key)}</span>
+                                                    <span className="text-2xl">{item.label}</span>
                                                     <MotionSpan
-                                                        animate={{ rotate: activeDropdown === item.key ? 180 : 0 }}
+                                                        animate={{ rotate: activeDropdown === item.label ? 180 : 0 }}
                                                         transition={{ duration: 0.2 }}
                                                     >
                                                         <ChevronDown className="h-4 w-4" />
                                                     </MotionSpan>
                                                 </button>
                                                 <AnimatePresence>
-                                                    {activeDropdown === item.key && (
+                                                    {activeDropdown === item.label && (
                                                         <MotionDiv
                                                             initial={{ opacity: 0, height: 0 }}
                                                             animate={{ opacity: 1, height: "auto" }}
@@ -211,12 +209,12 @@ export default function Header() {
                                                         >
                                                             {item.submenu.map((subitem) => (
                                                                 <Link
-                                                                    key={subitem.key}
+                                                                    key={subitem.label}
                                                                     href={subitem.href}
                                                                     className="block py-2 text-gray-800 hover:text-primary text-xl tracking-tighter"
                                                                     onClick={closeMenu}
                                                                 >
-                                                                    {t(subitem.key)}
+                                                                    {subitem.label}
                                                                 </Link>
                                                             ))}
                                                         </MotionDiv>
@@ -229,7 +227,7 @@ export default function Header() {
                                                 className="block px-4 py-2 text-gray-800 hover:text-primary text-2xl tracking-tighter"
                                                 onClick={closeMenu}
                                             >
-                                                {t(item.key)}
+                                                {item.label}
                                             </Link>
                                         )}
                                     </div>
@@ -240,7 +238,7 @@ export default function Header() {
                                         className="block w-full px-6 py-2.5 bg-primary text-white rounded-full text-2xl tracking-tighter text-center hover:bg-primary/90 transition-colors duration-200"
                                         onClick={closeMenu}
                                     >
-                                        {t('nav.getStarted')}
+                                        {content.nav.getStarted}
                                     </Link>
                                 </div>
                             </nav>

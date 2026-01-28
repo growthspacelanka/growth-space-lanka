@@ -5,10 +5,9 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { useTranslation } from '@/hooks/useTranslation';
+import { content } from '@/content';
 
 const AboutPreview: React.FC = () => {
-    const { t } = useTranslation();
 
     return (
         <section className="py-20 md:py-40 bg-gray-50">
@@ -23,14 +22,14 @@ const AboutPreview: React.FC = () => {
                         className="text-center mb-20"
                     >
                         <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
-                            {t('about.title')}
+                            {content.about.title}
                         </h2>
                         <div className="space-y-6">
                             <p className="text-3xl font-light text-gray-300 tracking-tight">
-                                {t('about.subtitle')}
+                                {content.about.subtitle}
                             </p>
                             <p className="text-2xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
-                                {t('about.description')}
+                                {content.about.description}
                             </p>
                         </div>
 
@@ -45,7 +44,7 @@ const AboutPreview: React.FC = () => {
                                 href="/about"
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white rounded-full text-2xl tracking-tight hover:bg-accent/90 transition-colors duration-200 group"
                             >
-                                {t('about.cta')}
+                                {content.about.cta}
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
                             </Link>
                         </motion.div>

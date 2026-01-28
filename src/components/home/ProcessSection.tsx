@@ -3,50 +3,14 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useTranslation } from '@/hooks/useTranslation';
-import { TranslationKey } from '@/translations';
-
-interface ProcessStep {
-    step: string;
-    title: TranslationKey;
-    description: TranslationKey;
-}
-
-const processes: ProcessStep[] = [
-    {
-        step: '01',
-        title: 'process.step1.title',
-        description: 'process.step1.description'
-    },
-    {
-        step: '02',
-        title: 'process.step2.title',
-        description: 'process.step2.description'
-    },
-    {
-        step: '03',
-        title: 'process.step3.title',
-        description: 'process.step3.description'
-    },
-    {
-        step: '04',
-        title: 'process.step4.title',
-        description: 'process.step4.description'
-    },
-    {
-        step: '05',
-        title: 'process.step5.title',
-        description: 'process.step5.description'
-    },
-    {
-        step: '06',
-        title: 'process.step6.title',
-        description: 'process.step6.description'
-    }
-];
+import { content } from '@/content';
 
 const ProcessSection: React.FC = () => {
-    const { t } = useTranslation();
+    const processes = content.process.steps.map((step, index) => ({
+        step: String(index + 1).padStart(2, '0'),
+        title: step.title,
+        description: step.description,
+    }));
 
     return (
         <section className="py-20 md:py-40 bg-slate-50">
@@ -61,14 +25,14 @@ const ProcessSection: React.FC = () => {
                         className="text-center mb-20"
                     >
                         <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
-                            {t('process.title')}
+                            {content.process.title}
                         </h2>
                         <div className="space-y-6">
                             <p className="text-3xl font-light text-gray-300 tracking-tight">
-                                {t('process.subtitle')}
+                                {content.process.subtitle}
                             </p>
                             <p className="text-xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
-                                {t('process.description')}
+                                {content.process.description}
                             </p>
                         </div>
                     </motion.div>
@@ -88,7 +52,7 @@ const ProcessSection: React.FC = () => {
                         </div>
 
                         {/* Process Steps */}
-                        {processes.filter(p => t(p.title) && t(p.description)).map((process, index) => (
+                        {processes.map((process, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
@@ -116,10 +80,10 @@ const ProcessSection: React.FC = () => {
                                         {process.step}
                                     </span>
                                     <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tighter mb-4">
-                                        {t(process.title)}
+                                        {process.title}
                                     </h3>
                                     <p className="text-xl text-white/80 font-light tracking-tight">
-                                        {t(process.description)}
+                                        {process.description}
                                     </p>
                                 </div>
                             </motion.div>

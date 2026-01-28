@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import PageHeader from '@/components/common/PageHeader';
+import { content } from '@/content';
 
 export default function BookACallPage() {
   useEffect(() => {
@@ -63,15 +64,15 @@ export default function BookACallPage() {
   return (
     <>
       <PageHeader
-        titleKey="bookACall.page.title"
-        descriptionKey="bookACall.page.description"
+        title={content.bookACall.page.title}
+        description={content.bookACall.page.description}
       />
       <main className="flex min-h-screen items-center justify-center py-8">
         <div className="container mx-auto px-4 flex justify-center">
           <div className="w-full max-w-6xl">
             <div className="rounded-lg overflow-hidden">
-              <div 
-                id="my-cal-inline-15min" 
+              <div
+                id="my-cal-inline-15min"
                 style={{
                   width: '100%',
                   height: '100%',

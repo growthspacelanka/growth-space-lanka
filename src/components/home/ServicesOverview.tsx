@@ -5,33 +5,31 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Bot, Code2 } from 'lucide-react';
-import { useTranslation } from '@/hooks/useTranslation';
-import { TranslationKey } from '@/translations';
+import { content } from '@/content';
 
 interface ServiceItem {
     icon: React.ReactNode;
-    title: TranslationKey;
-    description: TranslationKey;
+    title: string;
+    description: string;
     href: string;
 }
 
 const services: ServiceItem[] = [
     {
         icon: <Code2 className="w-10 h-10" />,
-        title: 'services.webdev.title',
-        description: 'services.webdev.description',
+        title: content.services.webdev.title,
+        description: content.services.webdev.description,
         href: '/services/web-development'
     },
     {
         icon: <Bot className="w-10 h-10" />,
-        title: 'services.ai.title',
-        description: 'services.ai.description',
+        title: content.services.ai.title,
+        description: content.services.ai.description,
         href: '/services/ai-solutions'
     }
 ];
 
 const ServicesOverview: React.FC = () => {
-    const { t } = useTranslation();
 
     return (
         <section className="py-20 md:py-40 bg-white">
@@ -46,14 +44,14 @@ const ServicesOverview: React.FC = () => {
                         className="text-center mb-20"
                     >
                         <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold  tracking-tighter">
-                            {t('services.title')}
+                            {content.services.title}
                         </h2>
                         <div className="space-y-6">
                             <p className="text-3xl font-light text-gray-300 tracking-tight">
-                                {t('services.subtitle')}
+                                {content.services.subtitle}
                             </p>
                             <p className="text-xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
-                                {t('services.description')}
+                                {content.services.description}
                             </p>
                         </div>
                     </motion.div>
@@ -78,10 +76,10 @@ const ServicesOverview: React.FC = () => {
                                         </div>
                                     </div>
                                     <h3 className="text-4xl md:text-5xl font-bold mb-4 text-primary tracking-tighter">
-                                        {t(service.title)}
+                                        {service.title}
                                     </h3>
                                     <p className="text-2xl text-neutral-medium font-light tracking-tight">
-                                        {t(service.description)}
+                                        {service.description}
                                     </p>
                                 </motion.div>
                             </Link>

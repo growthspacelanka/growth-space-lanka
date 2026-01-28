@@ -2,16 +2,13 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useTranslation } from '@/hooks/useTranslation';
-import { TranslationKey } from '@/translations';
 
 interface PageHeaderProps {
-    titleKey: TranslationKey;
-    descriptionKey: TranslationKey;
+    title: string;
+    description: string;
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ titleKey, descriptionKey }) => {
-    const { t } = useTranslation();
+const PageHeader: React.FC<PageHeaderProps> = ({ title, description }) => {
 
     return (
         <section className="bg-gray-50 h-[450px] pt-24 relative overflow-hidden flex items-center">
@@ -27,10 +24,10 @@ const PageHeader: React.FC<PageHeaderProps> = ({ titleKey, descriptionKey }) => 
                             }}
                         >
                             <h1 className="text-5xl font-bold tracking-tighter md:text-6xl lg:text-9xl text-primary">
-                                {t(titleKey)}
+                                {title}
                             </h1>
                             <p className="text-xl font-light tracking-tight text-gray-400 uppercase md:text-3xl">
-                                {t(descriptionKey)}
+                                {description}
                             </p>
                         </motion.div>
                     </div>
