@@ -88,7 +88,7 @@ const ProcessSection: React.FC = () => {
                         </div>
 
                         {/* Process Steps */}
-                        {processes.map((process, index) => (
+                        {processes.filter(p => t(p.title) && t(p.description)).map((process, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
