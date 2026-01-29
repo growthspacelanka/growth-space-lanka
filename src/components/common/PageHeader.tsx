@@ -8,7 +8,7 @@ interface PageHeaderProps {
     description: string;
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ title, description }) => {
+const PageHeader: React.FC<PageHeaderProps> = ({ title }) => {
 
     return (
         <section className="bg-gray-50 h-[450px] pt-24 relative overflow-hidden flex items-center">
@@ -26,9 +26,6 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title, description }) => {
                             <h1 className="text-5xl font-bold tracking-tighter md:text-6xl lg:text-9xl text-primary">
                                 {title}
                             </h1>
-                            <p className="text-xl font-light tracking-tight text-gray-400 uppercase md:text-3xl">
-                                {description}
-                            </p>
                         </motion.div>
                     </div>
                 </div>

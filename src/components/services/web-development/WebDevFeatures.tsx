@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { content } from '@/content';
-import { Laptop, Mail, Smartphone, Edit } from 'lucide-react';
+import { Laptop, Mail, Smartphone, ClipboardList } from 'lucide-react';
 
 interface FeatureItem {
     icon: React.ReactNode;
@@ -28,7 +28,7 @@ const features: FeatureItem[] = [
         description: content.services.webdev.features.items[2].description,
     },
     {
-        icon: <Edit className="w-10 h-10" />,
+        icon: <ClipboardList className="w-10 h-10" />,
         title: content.services.webdev.features.items[3].title,
         description: content.services.webdev.features.items[3].description,
     }
@@ -55,7 +55,7 @@ const WebDevFeatures = () => {
                             <p className="text-3xl font-light text-gray-300 tracking-tight">
                                 {content.services.webdev.features.subtitle}
                             </p>
-                            <p className="text-xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
+                            <p className="text-2xl md:text-3xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
                                 {content.services.webdev.features.description}
                             </p>
                         </div>

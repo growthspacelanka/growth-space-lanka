@@ -57,7 +57,7 @@ const AiFeatures = () => {
                             <p className="text-3xl font-light text-gray-300 tracking-tight">
                                 {t('services.ai.features.subtitle')}
                             </p>
-                            <p className="text-xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
+                            <p className="text-2xl md:text-3xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
                                 {t('services.ai.features.description')}
                             </p>
                         </div>

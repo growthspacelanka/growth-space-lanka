@@ -106,7 +106,7 @@ const AiTechStack = () => {
                             <p className="text-3xl font-light text-gray-300/50 tracking-tight">
                                 {t('services.ai.tech.subtitle')}
                             </p>
-                            <p className="text-xl text-white font-light max-w-3xl mx-auto tracking-tight">
+                            <p className="text-2xl md:text-3xl text-white font-light max-w-3xl mx-auto tracking-tight">
                                 {t('services.ai.tech.description')}
                             </p>
                         </div>

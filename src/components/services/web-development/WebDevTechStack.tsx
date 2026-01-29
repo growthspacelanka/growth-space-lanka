@@ -3,13 +3,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { content } from '@/content';
-import { Database, Layout, Server, Cog, ChevronDown } from 'lucide-react';
+import { Layout, FileText, MessageCircle, ShieldCheck, ChevronDown } from 'lucide-react';
 
 interface TechStackItem {
     icon: React.ReactNode;
     title: string;
     description: string;
-    technologies: string[];
+    points: string[];
 }
 
 const techStacks: TechStackItem[] = [
@@ -17,25 +17,25 @@ const techStacks: TechStackItem[] = [
         icon: <Layout className="w-10 h-10" />,
         title: content.services.webdev.tech.frontend.title,
         description: content.services.webdev.tech.frontend.description,
-        technologies: content.services.webdev.tech.frontend.technologies,
+        points: content.services.webdev.tech.frontend.points,
     },
     {
-        icon: <Server className="w-10 h-10" />,
+        icon: <FileText className="w-10 h-10" />,
         title: content.services.webdev.tech.backend.title,
         description: content.services.webdev.tech.backend.description,
-        technologies: content.services.webdev.tech.backend.technologies,
+        points: content.services.webdev.tech.backend.points,
     },
     {
-        icon: <Database className="w-10 h-10" />,
+        icon: <MessageCircle className="w-10 h-10" />,
         title: content.services.webdev.tech.database.title,
         description: content.services.webdev.tech.database.description,
-        technologies: content.services.webdev.tech.database.technologies,
+        points: content.services.webdev.tech.database.points,
     },
     {
-        icon: <Cog className="w-10 h-10" />,
+        icon: <ShieldCheck className="w-10 h-10" />,
         title: content.services.webdev.tech.tools.title,
         description: content.services.webdev.tech.tools.description,
-        technologies: content.services.webdev.tech.tools.technologies,
+        points: content.services.webdev.tech.tools.points,
     }
 ];
 
@@ -47,12 +47,6 @@ const WebDevTechStack = () => {
         setMobileExpanded(mobileExpanded === index ? null : index);
     };
 
-    const TechnologyItem = ({ tech }: { tech: string }) => (
-        <div className="flex items-center space-x-3">
-            <div className="w-3 h-3 border border-white/70 rounded-full bg-accent flex-shrink-0" />
-            <span>{tech}</span>
-        </div>
-    );
 
     return (
         <section className="py-20 md:py-40 bg-primary">
@@ -73,7 +67,7 @@ const WebDevTechStack = () => {
                             <p className="text-3xl font-light text-gray-300/50 tracking-tight">
                                 {content.services.webdev.tech.subtitle}
                             </p>
-                            <p className="text-xl text-white font-light max-w-3xl mx-auto tracking-tight">
+                            <p className="text-2xl md:text-3xl text-white font-light max-w-3xl mx-auto tracking-tight">
                                 {content.services.webdev.tech.description}
                             </p>
                         </div>
@@ -128,16 +122,19 @@ const WebDevTechStack = () => {
                                             className="overflow-hidden"
                                         >
                                             <div className="p-6 pt-4 space-y-4">
-                                                <p className="text-xl text-white/70 tracking-tighter">
+                                                <p className="text-lg font-semibold text-white/80 tracking-tight">
                                                     {stack.description}
                                                 </p>
-                                                <div className="space-y-3">
-                                                    {stack.technologies.map((tech) => (
+                                                <div className="grid grid-cols-1 gap-2">
+                                                    {stack.points.map((point) => (
                                                         <div
-                                                            key={tech}
-                                                            className="p-4 bg-white/10 border text-lg tracking-tighter border-white/10 rounded-lg text-white"
+                                                            key={point}
+                                                            className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/5 px-4 py-3"
                                                         >
-                                                            <TechnologyItem tech={tech} />
+                                                            <span className="w-3 h-3 rounded-full border border-white/80 bg-accent flex-shrink-0" />
+                                                            <span className="text-lg text-white/80 tracking-tight">
+                                                                {point}
+                                                            </span>
                                                         </div>
                                                     ))}
                                                 </div>
@@ -156,7 +153,7 @@ const WebDevTechStack = () => {
                                 <motion.button
                                     key={stack.title}
                                     onClick={() => setActiveTab(index)}
-                                    className={`flex items-center gap-3 px-8 py-4 rounded-xl tracking-tighter transition-all duration-300 ${activeTab === index
+                                    className={`flex items-center gap-3 px-8 py-4 rounded-xl tracking-tighter transition-all duration-300 text-left ${activeTab === index
                                         ? 'bg-white/20 border border-white/10 text-white '
                                         : 'bg-white/10 border border-white/10 text-white hover:bg-white/20'
                                         }`}
@@ -165,7 +162,7 @@ const WebDevTechStack = () => {
                                     <div className={activeTab === index ? 'text-white' : 'text-white/90'}>
                                         {stack.icon}
                                     </div>
-                                    <span className="text-xl font-medium">
+                                    <span className="text-xl font-medium text-left">
                                         {stack.title}
                                     </span>
                                 </motion.button>
@@ -185,24 +182,24 @@ const WebDevTechStack = () => {
                                     <h3 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-4">
                                         {techStacks[activeTab].title}
                                     </h3>
-                                    <p className="text-2xl text-white/70 tracking-tighter">
+                                    <p className="text-2xl text-white/80 tracking-tighter mb-6">
                                         {techStacks[activeTab].description}
                                     </p>
+                                    <div className="grid gap-3 md:grid-cols-2">
+                                        {techStacks[activeTab].points.map((point) => (
+                                            <div
+                                                key={point}
+                                                className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/5 px-4 py-3"
+                                            >
+                                                <span className="w-3 h-3 rounded-full border border-white/80 bg-accent flex-shrink-0" />
+                                                <span className="text-xl text-white/80 tracking-tight">
+                                                    {point}
+                                                </span>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
 
-                                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                                    {techStacks[activeTab].technologies.map((tech, index) => (
-                                        <motion.div
-                                            key={tech}
-                                            initial={{ opacity: 0, y: 20 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.3, delay: index * 0.1 }}
-                                            className="border border-white/10 p-4 rounded-xl text-white text-lg tracking-tighter"
-                                        >
-                                            <TechnologyItem tech={tech} />
-                                        </motion.div>
-                                    ))}
-                                </div>
                             </motion.div>
                         </AnimatePresence>
                     </div>

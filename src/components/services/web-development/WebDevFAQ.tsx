@@ -17,16 +17,20 @@ interface FAQCategory {
 
 const faqCategories: FAQCategory[] = [
     {
-        title: 'Process & Timeline',
+        title: content.services.webdev.faq.pricing.title,
+        faqs: content.services.webdev.faq.pricing.items,
+    },
+    {
+        title: content.services.webdev.faq.process.title,
         faqs: content.services.webdev.faq.process.items,
     },
     {
-        title: 'Technical Questions',
+        title: content.services.webdev.faq.technical.title,
         faqs: content.services.webdev.faq.technical.items,
     },
     {
-        title: 'Working Together',
-        faqs: content.services.webdev.faq.collaboration.items,
+        title: content.services.webdev.faq.support.title,
+        faqs: content.services.webdev.faq.support.items,
     }
 ];
 
@@ -35,7 +39,8 @@ const WebDevFAQ = () => {
     const [expandedQuestions, setExpandedQuestions] = useState<Record<number, number | null>>({
         0: 0,
         1: null,
-        2: null
+        2: null,
+        3: null
     });
 
     const toggleQuestion = (categoryIndex: number, questionIndex: number) => {
@@ -64,7 +69,7 @@ const WebDevFAQ = () => {
                             <p className="text-3xl font-light text-gray-300  tracking-tight">
                                 {content.services.webdev.faq.subtitle}
                             </p>
-                            <p className="text-xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
+                            <p className="text-2xl md:text-3xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
                                 {content.services.webdev.faq.description}
                             </p>
                         </div>
@@ -99,7 +104,7 @@ const WebDevFAQ = () => {
 
                                 {/* Questions */}
                                 <AnimatePresence>
-                                    {expandedCategory === categoryIndex && (
+                                    {expandedCategory === categoryIndex && category.faqs.length > 0 && (
                                         <motion.div
                                             initial={{ height: 0 }}
                                             animate={{ height: 'auto' }}
@@ -115,7 +120,7 @@ const WebDevFAQ = () => {
                                                             className="w-full py-4 text-left"
                                                         >
                                                             <div className="flex items-start justify-between">
-                                                                <p className="text-2xl  font-medium tracking-tighter pr-8">
+                                                                <p className="text-2xl font-medium tracking-tighter pr-8 uppercase text-gray-600">
                                                                     {faq.question}
                                                                 </p>
                                                                 <ChevronDown
@@ -133,7 +138,7 @@ const WebDevFAQ = () => {
                                                                     transition={{ duration: 0.3 }}
                                                                     className="overflow-hidden"
                                                                 >
-                                                                    <p className="pb-4 text-xl text-gray-400 font-light tracking-tighter">
+                                                                    <p className="pb-4 text-2xl text-gray-400 font-light tracking-tighter">
                                                                         {faq.answer}
                                                                     </p>
                                                                 </motion.div>

@@ -42,108 +42,307 @@ export const content = {
       description: 'Best for shops, service providers, and small businesses that need a professional online presence. Includes essential pages, clear service information, and contact options — all built with a mobile-friendly design.',
       page: {
         title: 'Business Websites',
-        description: 'Professional websites for Sri Lankan businesses',
+        description: 'Fixed website packages with a guided setup — clear scope, clean design, and no technical confusion.',
       },
       features: {
         title: 'What\'s Included',
         subtitle: 'Package features',
-        description: 'Every Business Website package includes these essential features to help your business get online.',
+        description: 'Every Business Website package includes the essentials to help customers understand your services, trust your business, and contact you easily.',
         items: [
           {
             title: 'Essential Pages',
-            description: 'Home page, about page, services page, and contact page. All pages are mobile-friendly and easy to navigate.',
+            description:
+              'Home, About, Services, and Contact — clearly structured to explain what you do, who it’s for, and guide visitors toward taking action.',
           },
           {
-            title: 'Contact Forms',
-            description: 'Contact forms so customers can reach you easily. Forms are connected to your email for quick responses.',
+            title: 'Contact Options',
+            description:
+              'Customers can reach you easily through a contact form and preferred methods such as WhatsApp, or email — based on your package.',
           },
           {
-            title: 'Mobile-Friendly Design',
-            description: 'Your website works perfectly on phones, tablets, and computers. Customers can find you on any device.',
+            title: 'Mobile-First Design',
+            description:
+              'Designed to look professional and work smoothly across mobile phones, tablets, and desktop devices without layout or usability issues.',
           },
           {
-            title: 'Basic Updates',
-            description: 'Simple content management so you can update your business information, services, and contact details yourself.',
+            title: 'GUIDED SETUP PROCESS',
+            description:
+              'We collect your business details through a clear, guided setup — so you don’t have to guess what to provide and nothing important is missed.',
           },
         ],
       },
       tech: {
         title: 'How We Build It',
-        subtitle: 'Modern and reliable',
-        description: 'We use modern, reliable tools to build your website. No technical knowledge needed from your side.',
+        subtitle: 'Simple, reliable, and fully managed',
+        description:
+          'We follow a clear, guided process to build your website — from collecting your information to launching it live. You don\'t need technical knowledge — we handle the structure, setup, and configuration based on your selected package.',
         frontend: {
-          title: 'Frontend',
-          description: 'The part of your website that visitors see and interact with.',
-          technologies: ['Responsive Design', 'Mobile Optimization', 'Fast Loading', 'Easy Navigation', 'Contact Forms', 'Image Optimization', 'SEO Basics', 'Browser Compatibility'],
+          title: 'Structure & Design',
+          description: 'What your website looks like',
+          points: [
+            'Clean, professional layout based on your package',
+            'Mobile-friendly design for all devices',
+            'Clear navigation for visitors',
+            'Strong calls-to-action to guide users',
+          ],
         },
         backend: {
-          title: 'Backend',
-          description: 'The part that handles forms, data, and makes everything work smoothly.',
-          technologies: ['Form Handling', 'Email Integration', 'Secure Setup', 'Fast Performance', 'Reliable Hosting', 'Data Management', 'Backup Systems', 'Security Basics'],
+          title: 'Content & Setup',
+          description: 'How your information is added',
+          points: [
+            'Guided content submission process',
+            'Structured sections based on your package scope',
+            'Clear placement of services, business details, and contact information',
+          ],
         },
         database: {
-          title: 'Data & Storage',
-          description: 'Where your website content and customer inquiries are stored safely.',
-          technologies: ['Content Storage', 'Form Submissions', 'Secure Backups', 'Data Protection', 'Quick Access', 'Reliable Storage', 'Privacy Compliant', 'Regular Backups'],
+          title: 'Contact & Enquiries',
+          description: 'How customers reach you',
+          points: [
+            'WhatsApp integration for direct enquiries',
+            'Contact forms where included in the package',
+            'Enquiries delivered directly to you',
+          ],
         },
         tools: {
-          title: 'Tools & Services',
-          description: 'The services and tools we use to keep your website running smoothly.',
-          technologies: ['Website Hosting', 'Domain Setup', 'SSL Certificate', 'Email Setup', 'Analytics Basics', 'Performance Tools', 'Support Access', 'Update Tools'],
+          title: 'Reliability & Maintenance',
+          description: 'How we keep your website running',
+          points: [
+            'Hosting setup and configuration',
+            'Basic security and monitoring',
+            'Ongoing technical maintenance',
+            'Covered under the monthly maintenance plan',
+          ],
         },
+      },
+      packages: {
+        title: 'Business Website Packages',
+        subtitle: 'Choose the right package for your business needs',
+        description: 'Choose a website package based on your business size and stage. Each package has a clearly defined scope, page limit, delivery timeline, and guided setup process — so there are no surprises later.',
+        pricingNote: 'All packages include a standard LKR 500 monthly fee for hosting, security, and basic maintenance. No hidden costs. Cancel anytime.',
+        items: [
+          {
+            name: 'Starter Website',
+            bestFor: 'Small businesses that are just starting and need a simple, professional online presence.',
+            pageStructure: 'Single-page website',
+            price: 'LKR 7,999',
+            stripeLink: '/payment/starter',
+            includes: [
+              'Single-page website with up to 5 structured sections',
+              'Clean and modern design',
+              'Mobile-friendly layout',
+              'WhatsApp integration',
+              'Basic contact section',
+              'Guided content submission',
+            ],
+            goodToKnow: [
+              'Fixed single-page structure',
+              'Limited customization',
+            ],
+          },
+          {
+            name: 'Growth Website',
+            bestFor: 'Growing businesses that want more visibility and need multiple pages to explain services clearly.',
+            pageStructure: '3–5 page website',
+            price: 'LKR 14,999',
+            stripeLink: '/payment/growth',
+            includes: [
+              '3–5 page website structure',
+              'Professional layout',
+              'Mobile-friendly design',
+              'Basic SEO setup',
+              'WhatsApp integration',
+              'Contact form',
+            ],
+            goodToKnow: [
+              'Clearly defined page limit',
+              'More flexibility than Starter',
+            ],
+          },
+          {
+            name: 'Professional Website',
+            bestFor: 'Established businesses that want a strong brand presence and are scaling fast.',
+            pageStructure: 'Up to 10–12 pages',
+            price: 'LKR 29,999',
+            stripeLink: '/payment/professional',
+            includes: [
+              'Up to 10–12 pages',
+              'Customised page structure within package scope',
+              'Enhanced SEO setup',
+              'Priority handling',
+              'Lead-focused layout',
+              'WhatsApp integration',
+              'Contact form',
+            ],
+            goodToKnow: [
+              'Requires more detailed business information',
+              'Designed for long-term growth',
+            ],
+          },
+          {
+            name: 'Custom Package',
+            bestFor: 'Businesses with specific or advanced requirements beyond standard website packages.',
+            pageStructure: 'Custom-defined',
+            price: 'Custom pricing',
+            stripeLink: '/contact',
+            includes: [
+              'Custom scope defined after discussion',
+              'Flexible structure based on business needs',
+              'Dedicated project support',
+              'Extended timeline depending on complexity',
+            ],
+            goodToKnow: [
+              'Requires discussion before confirmation',
+              'Pricing depends on scope',
+            ],
+          },
+        ],
       },
       faq: {
         title: 'Frequently Asked Questions',
-        subtitle: 'Common questions',
-        description: 'Answers to common questions about our Business Website packages.',
-        process: {
-          title: 'Process & Timeline',
+        subtitle: 'Everything you need to know about our Business Website packages',
+        description: 'Find answers to common questions about pricing, process, technical details, and ongoing support for your business website.',
+        pricing: {
+          title: 'Pricing & Packages',
           items: [
             {
-              question: 'How long does it take to build my website?',
-              answer: 'Most Business Website packages are completed within 2-3 weeks after you provide your business details. Timeline depends on the package you choose and how quickly you share the required information.',
+              question: 'What is included in each website package?',
+              answer: 'Each website package includes a clearly defined set of pages, features, and design scope. You will know exactly what is included before we start the project.',
             },
             {
-              question: 'What information do I need to provide?',
-              answer: 'You\'ll fill out a simple form with your business name, services, contact details, and any images or content you want to include. We guide you through each step.',
+              question: 'What is the LKR 500 monthly fee for?',
+              answer: 'The LKR 500 monthly fee covers website hosting, uptime monitoring, basic security checks, and routine technical maintenance to ensure your website stays online, secure, and running smoothly.',
             },
             {
-              question: 'Can I make changes after the website is live?',
-              answer: 'Yes. Basic packages include simple content management so you can update your business information, services, and contact details yourself. We provide guidance on how to do this.',
+              question: 'How long does it take to build the website?',
+              answer: 'Timelines depend on the selected package. Starter packages are delivered in up to 2 working days, Growth packages in up to 3 working days, and Professional packages in up to 5 working days.',
+            },
+            {
+              question: 'Will I be able to review the website before launch?',
+              answer: 'Yes. You will receive a preview of the website to review and approve before it goes live.',
+            },
+            {
+              question: 'Are there any hidden costs?',
+              answer: 'No. All pricing is transparent, and everything included is clearly mentioned upfront.',
+            },
+            {
+              question: 'Is the monthly maintenance fee mandatory?',
+              answer: 'Yes. The monthly maintenance fee is mandatory to ensure reliable hosting, security, and smooth operation of your website at all times.',
+            },
+            {
+              question: 'How many revisions are included?',
+              answer: 'The Starter package includes one revision. Growth and Professional packages include up to two revisions each.',
+            },
+          ],
+        },
+        process: {
+          title: 'Process & Delivery',
+          items: [
+            {
+              question: 'How does the website building process work?',
+              answer: 'Once you choose a package and share your business details, we design, build, review, and launch your website based on the selected package scope.',
+            },
+            {
+              question: 'What do you need from me to get started?',
+              answer: 'We need your business details, services, and any existing content such as logos, text, or images. If you don\'t have content, we will guide you.',
+            },
+            {
+              question: 'What if I don\'t have content or images?',
+              answer: 'That\'s okay. We help structure the content and guide you on what is needed to complete the website.',
+            },
+            {
+              question: 'What happens if I delay providing content or feedback?',
+              answer: 'Delays in content or feedback may affect the delivery timeline. We recommend sharing details on time to keep the project moving.',
+            },
+            {
+              question: 'Will I see the website before it goes live?',
+              answer: 'Yes. You will review and approve the website before it goes live.',
             },
           ],
         },
         technical: {
-          title: 'Technical Questions',
+          title: 'Technical & Ownership',
           items: [
             {
-              question: 'Do I need technical knowledge?',
-              answer: 'No. We handle all the technical setup. You just provide your business information, and we build everything. After launch, you can update basic content without technical knowledge.',
+              question: 'Will my website be mobile-friendly?',
+              answer: 'Yes. All websites are designed to work smoothly on mobile, tablet, and desktop devices.',
             },
             {
-              question: 'Will my website work on mobile phones?',
-              answer: 'Yes. All Business Website packages include mobile-friendly design. Your website will work well on phones, tablets, and computers.',
+              question: 'Is my website secure?',
+              answer: 'Yes. We apply basic security measures and routine checks to keep your website protected.',
             },
             {
-              question: 'What happens after my website is launched?',
-              answer: 'After launch, you can update your content yourself. We provide basic support and guidance. If you need major changes or additional features, those can be discussed as separate updates.',
+              question: 'Is SEO included in the website?',
+              answer: 'Basic SEO setup is included where applicable. Advanced SEO services are not part of standard packages.',
+            },
+            {
+              question: 'Where will my website be hosted?',
+              answer: 'Your website will be hosted under our managed hosting as part of the monthly maintenance plan.',
+            },
+            {
+              question: 'What happens if my website goes down?',
+              answer: 'We monitor uptime regularly. If an issue occurs, we take action to restore the website as quickly as possible.',
+            },
+            {
+              question: 'Will my website be fast?',
+              answer: 'Yes. Websites are optimized for performance to ensure smooth loading on all devices.',
+            },
+            {
+              question: 'Can I use my existing domain?',
+              answer: 'Yes. If you already own a domain, we can connect it to your new website.',
+            },
+            {
+              question: 'Can I move my website to another host later?',
+              answer: 'Yes. If you choose to move away from our hosting, we can migrate the website to another hosting provider.',
+            },
+            {
+              question: 'Will I have access to my website?',
+              answer: 'Yes. You will have appropriate access to manage your website based on the selected package.',
+            },
+            {
+              question: 'Who owns the website after it\'s built?',
+              answer: 'You do. Once the website is completed and live, it fully belongs to your business.',
             },
           ],
         },
-        collaboration: {
-          title: 'Working Together',
+        support: {
+          title: 'Support, Maintenance & Expectations',
           items: [
             {
-              question: 'How do we communicate during the project?',
-              answer: 'We use email and simple forms to collect your information. You review the website and provide feedback. No need for long calls or technical meetings.',
+              question: 'What kind of support do you provide after launch?',
+              answer: 'We provide technical support related to hosting, uptime, and basic website functionality as part of the monthly maintenance.',
             },
             {
-              question: 'Can I see my website before it goes live?',
-              answer: 'Yes. We share a preview link so you can review everything before launch. You can request changes and we\'ll update it accordingly.',
+              question: 'What happens if I need changes after the website is live?',
+              answer: 'Minor changes can be discussed. Larger updates, new sections, or feature requests may require additional charges.',
             },
             {
-              question: 'What if I need more features later?',
-              answer: 'Basic packages include essential features. If you need additional pages, features, or integrations later, we can discuss those as separate updates based on your needs.',
+              question: 'Does the monthly maintenance include content updates?',
+              answer: 'No. The monthly maintenance fee covers hosting and basic technical upkeep. Content updates require a separate maintenance plan.',
+            },
+            {
+              question: 'Do you offer unlimited revisions or changes?',
+              answer: 'No. All work is handled within the defined package scope to keep timelines and pricing clear.',
+            },
+            {
+              question: 'Are there long-term contracts?',
+              answer: 'No. There are no long-term contracts for our services or maintenance plans.',
+            },
+            {
+              question: 'Is this service suitable for large custom systems?',
+              answer: 'No. Our package-based service is designed for small to medium business websites. Large or custom systems require separate discussions.',
+            },
+            {
+              question: 'Can I request new features later?',
+              answer: 'Yes. New features or enhancements can be discussed and quoted separately based on your requirements.',
+            },
+            {
+              question: 'How do I contact you for support?',
+              answer: 'You can contact us via WhatsApp or the provided support channels during working hours.',
+            },
+            {
+              question: 'What happens if I stop the monthly maintenance?',
+              answer: 'If maintenance is cancelled, hosting will need to be arranged separately, or the website can be migrated to another hosting provider.',
             },
           ],
         },
