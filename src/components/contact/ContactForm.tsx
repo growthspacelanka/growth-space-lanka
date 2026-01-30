@@ -24,11 +24,11 @@ interface ServiceItem {
 
 const services: ServiceItem[] = [
     {
-        id: 'web-development',
+        id: 'business-website',
         translationKey: 'contact.form.services.webdev'
     },
     {
-        id: 'ai-solutions',
+        id: 'ecommerce-website',
         translationKey: 'contact.form.services.ai'
     }
 ];

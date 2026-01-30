@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 interface PageHeaderProps {
     title: string;
-    description: string;
+    description?: string;
 }
 
 const PageHeader: React.FC<PageHeaderProps> = ({ title }) => {

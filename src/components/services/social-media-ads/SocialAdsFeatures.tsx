@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { content } from '@/content';
-import { ShoppingBag, CreditCard, Smartphone, ClipboardList } from 'lucide-react';
+import { Target, Image, Users, BarChart3 } from 'lucide-react';
 
 interface FeatureItem {
     icon: React.ReactNode;
@@ -13,28 +13,28 @@ interface FeatureItem {
 
 const features: FeatureItem[] = [
     {
-        icon: <ShoppingBag className="w-10 h-10" />,
-        title: content.services.ai.features.items[0].title,
-        description: content.services.ai.features.items[0].description,
+        icon: <Target className="w-10 h-10" />,
+        title: content.services.socialAds.features.items[0].title,
+        description: content.services.socialAds.features.items[0].description,
     },
     {
-        icon: <CreditCard className="w-10 h-10" />,
-        title: content.services.ai.features.items[1].title,
-        description: content.services.ai.features.items[1].description,
+        icon: <Image className="w-10 h-10" />,
+        title: content.services.socialAds.features.items[1].title,
+        description: content.services.socialAds.features.items[1].description,
     },
     {
-        icon: <Smartphone className="w-10 h-10" />,
-        title: content.services.ai.features.items[2].title,
-        description: content.services.ai.features.items[2].description,
+        icon: <Users className="w-10 h-10" />,
+        title: content.services.socialAds.features.items[2].title,
+        description: content.services.socialAds.features.items[2].description,
     },
     {
-        icon: <ClipboardList className="w-10 h-10" />,
-        title: content.services.ai.features.items[3].title,
-        description: content.services.ai.features.items[3].description,
+        icon: <BarChart3 className="w-10 h-10" />,
+        title: content.services.socialAds.features.items[3].title,
+        description: content.services.socialAds.features.items[3].description,
     },
 ];
 
-const AiFeatures = () => {
+const SocialAdsFeatures = () => {
     return (
         <section className="py-20 md:py-40 bg-white">
             <div className="container mx-auto px-4">
@@ -47,14 +47,14 @@ const AiFeatures = () => {
                         className="text-center mb-20"
                     >
                         <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
-                            {content.services.ai.features.title}
+                            {content.services.socialAds.features.title}
                         </h2>
                         <div className="space-y-6">
                             <p className="text-3xl font-light text-gray-300 tracking-tight">
-                                {content.services.ai.features.subtitle}
+                                {content.services.socialAds.features.subtitle}
                             </p>
                             <p className="text-2xl md:text-3xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
-                                {content.services.ai.features.description}
+                                {content.services.socialAds.features.description}
                             </p>
                         </div>
                     </motion.div>
@@ -89,4 +89,4 @@ const AiFeatures = () => {
     );
 };
 
-export default AiFeatures;
+export default SocialAdsFeatures;

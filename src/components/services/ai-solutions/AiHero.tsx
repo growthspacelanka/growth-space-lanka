@@ -5,12 +5,7 @@ import PageHeader from '@/components/common/PageHeader';
 import { content } from '@/content';
 
 const AiHero = () => {
-    return (
-        <PageHeader
-            title={content.services.ai.page.title}
-            description={content.services.ai.page.description}
-        />
-    );
+    return <PageHeader title={content.services.ai.page.title} />;
 };
 
 export default AiHero;

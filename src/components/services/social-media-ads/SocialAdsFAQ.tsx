@@ -17,50 +17,30 @@ interface FAQCategory {
 
 const faqCategories: FAQCategory[] = [
     {
-        title: content.services.ai.faq.pricing.title,
-        faqs: content.services.ai.faq.pricing.items,
+        title: content.services.socialAds.faq.pricingBilling.title,
+        faqs: content.services.socialAds.faq.pricingBilling.items,
     },
     {
-        title: content.services.ai.faq.productsContent.title,
-        faqs: content.services.ai.faq.productsContent.items,
+        title: content.services.socialAds.faq.campaignScope.title,
+        faqs: content.services.socialAds.faq.campaignScope.items,
     },
     {
-        title: content.services.ai.faq.paymentsOrders.title,
-        faqs: content.services.ai.faq.paymentsOrders.items,
+        title: content.services.socialAds.faq.targetingStrategy.title,
+        faqs: content.services.socialAds.faq.targetingStrategy.items,
     },
     {
-        title: content.services.ai.faq.ordersCustomerFlow.title,
-        faqs: content.services.ai.faq.ordersCustomerFlow.items,
-    },
-    {
-        title: content.services.ai.faq.designCustomization.title,
-        faqs: content.services.ai.faq.designCustomization.items,
-    },
-    {
-        title: content.services.ai.faq.process.title,
-        faqs: content.services.ai.faq.process.items,
-    },
-    {
-        title: content.services.ai.faq.technical.title,
-        faqs: content.services.ai.faq.technical.items,
-    },
-    {
-        title: content.services.ai.faq.support.title,
-        faqs: content.services.ai.faq.support.items,
+        title: content.services.socialAds.faq.reportingOptimisation.title,
+        faqs: content.services.socialAds.faq.reportingOptimisation.items,
     },
 ];
 
-const AiFAQ = () => {
+const SocialAdsFAQ = () => {
     const [expandedCategory, setExpandedCategory] = useState<number>(0);
     const [expandedQuestions, setExpandedQuestions] = useState<Record<number, number | null>>({
         0: 0,
         1: null,
         2: null,
         3: null,
-        4: null,
-        5: null,
-        6: null,
-        7: null,
     });
 
     const toggleQuestion = (categoryIndex: number, questionIndex: number) => {
@@ -82,14 +62,14 @@ const AiFAQ = () => {
                         className="text-center mb-20"
                     >
                         <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
-                            {content.services.ai.faq.title}
+                            {content.services.socialAds.faq.title}
                         </h2>
                         <div className="space-y-6">
                             <p className="text-3xl font-light text-gray-300 tracking-tight">
-                                {content.services.ai.faq.subtitle}
+                                {content.services.socialAds.faq.subtitle}
                             </p>
                             <p className="text-2xl md:text-3xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
-                                {content.services.ai.faq.description}
+                                {content.services.socialAds.faq.description}
                             </p>
                         </div>
                     </motion.div>
@@ -146,9 +126,9 @@ const AiFAQ = () => {
                                                                 </p>
                                                                 <ChevronDown
                                                                     className={`w-6 h-6 text-primary flex-shrink-0 transition-transform duration-300 ${expandedQuestions[categoryIndex] ===
-                                                                        questionIndex
-                                                                        ? 'rotate-180'
-                                                                        : ''
+                                                                            questionIndex
+                                                                            ? 'rotate-180'
+                                                                            : ''
                                                                         }`}
                                                                 />
                                                             </div>
@@ -184,4 +164,4 @@ const AiFAQ = () => {
     );
 };
 
-export default AiFAQ;
+export default SocialAdsFAQ;

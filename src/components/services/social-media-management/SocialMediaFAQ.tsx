@@ -17,40 +17,40 @@ interface FAQCategory {
 
 const faqCategories: FAQCategory[] = [
     {
-        title: content.services.ai.faq.pricing.title,
-        faqs: content.services.ai.faq.pricing.items,
+        title: content.services.socialMedia.faq.pricingBilling.title,
+        faqs: content.services.socialMedia.faq.pricingBilling.items,
     },
     {
-        title: content.services.ai.faq.productsContent.title,
-        faqs: content.services.ai.faq.productsContent.items,
+        title: content.services.socialMedia.faq.platformsPosting.title,
+        faqs: content.services.socialMedia.faq.platformsPosting.items,
     },
     {
-        title: content.services.ai.faq.paymentsOrders.title,
-        faqs: content.services.ai.faq.paymentsOrders.items,
+        title: content.services.socialMedia.faq.contentCreation.title,
+        faqs: content.services.socialMedia.faq.contentCreation.items,
     },
     {
-        title: content.services.ai.faq.ordersCustomerFlow.title,
-        faqs: content.services.ai.faq.ordersCustomerFlow.items,
+        title: content.services.socialMedia.faq.processWorkflow.title,
+        faqs: content.services.socialMedia.faq.processWorkflow.items,
     },
     {
-        title: content.services.ai.faq.designCustomization.title,
-        faqs: content.services.ai.faq.designCustomization.items,
+        title: content.services.socialMedia.faq.engagementCommunication.title,
+        faqs: content.services.socialMedia.faq.engagementCommunication.items,
     },
     {
-        title: content.services.ai.faq.process.title,
-        faqs: content.services.ai.faq.process.items,
+        title: content.services.socialMedia.faq.reportingPerformance.title,
+        faqs: content.services.socialMedia.faq.reportingPerformance.items,
     },
     {
-        title: content.services.ai.faq.technical.title,
-        faqs: content.services.ai.faq.technical.items,
+        title: content.services.socialMedia.faq.ownershipControl.title,
+        faqs: content.services.socialMedia.faq.ownershipControl.items,
     },
     {
-        title: content.services.ai.faq.support.title,
-        faqs: content.services.ai.faq.support.items,
+        title: content.services.socialMedia.faq.supportExpectations.title,
+        faqs: content.services.socialMedia.faq.supportExpectations.items,
     },
 ];
 
-const AiFAQ = () => {
+const SocialMediaFAQ = () => {
     const [expandedCategory, setExpandedCategory] = useState<number>(0);
     const [expandedQuestions, setExpandedQuestions] = useState<Record<number, number | null>>({
         0: 0,
@@ -82,14 +82,14 @@ const AiFAQ = () => {
                         className="text-center mb-20"
                     >
                         <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
-                            {content.services.ai.faq.title}
+                            {content.services.socialMedia.faq.title}
                         </h2>
                         <div className="space-y-6">
                             <p className="text-3xl font-light text-gray-300 tracking-tight">
-                                {content.services.ai.faq.subtitle}
+                                {content.services.socialMedia.faq.subtitle}
                             </p>
                             <p className="text-2xl md:text-3xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
-                                {content.services.ai.faq.description}
+                                {content.services.socialMedia.faq.description}
                             </p>
                         </div>
                     </motion.div>
@@ -184,4 +184,4 @@ const AiFAQ = () => {
     );
 };
 
-export default AiFAQ;
+export default SocialMediaFAQ;

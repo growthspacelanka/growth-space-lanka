@@ -3,43 +3,43 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { content } from '@/content';
-import { Layout, FileText, MessageCircle, ShieldCheck, ChevronDown } from 'lucide-react';
+import { Target, FileText, DollarSign, BarChart3, ChevronDown } from 'lucide-react';
 
-interface TechStackItem {
+interface TabItem {
     icon: React.ReactNode;
     title: string;
     description: string;
     points: string[];
 }
 
-const techStacks: TechStackItem[] = [
+const tabs: TabItem[] = [
     {
-        icon: <Layout className="w-10 h-10" />,
-        title: content.services.ai.tech.frontend.title,
-        description: content.services.ai.tech.frontend.description,
-        points: content.services.ai.tech.frontend.points,
+        icon: <Target className="w-10 h-10" />,
+        title: content.services.socialAds.tech.strategy.title,
+        description: content.services.socialAds.tech.strategy.description,
+        points: content.services.socialAds.tech.strategy.points,
     },
     {
         icon: <FileText className="w-10 h-10" />,
-        title: content.services.ai.tech.backend.title,
-        description: content.services.ai.tech.backend.description,
-        points: content.services.ai.tech.backend.points,
+        title: content.services.socialAds.tech.creative.title,
+        description: content.services.socialAds.tech.creative.description,
+        points: content.services.socialAds.tech.creative.points,
     },
     {
-        icon: <MessageCircle className="w-10 h-10" />,
-        title: content.services.ai.tech.database.title,
-        description: content.services.ai.tech.database.description,
-        points: content.services.ai.tech.database.points,
+        icon: <DollarSign className="w-10 h-10" />,
+        title: content.services.socialAds.tech.targeting.title,
+        description: content.services.socialAds.tech.targeting.description,
+        points: content.services.socialAds.tech.targeting.points,
     },
     {
-        icon: <ShieldCheck className="w-10 h-10" />,
-        title: content.services.ai.tech.tools.title,
-        description: content.services.ai.tech.tools.description,
-        points: content.services.ai.tech.tools.points,
+        icon: <BarChart3 className="w-10 h-10" />,
+        title: content.services.socialAds.tech.monitoring.title,
+        description: content.services.socialAds.tech.monitoring.description,
+        points: content.services.socialAds.tech.monitoring.points,
     },
 ];
 
-const AiTechStack = () => {
+const SocialAdsHowWeRunAds = () => {
     const [activeTab, setActiveTab] = useState(0);
     const [mobileExpanded, setMobileExpanded] = useState<number | null>(0);
 
@@ -49,32 +49,32 @@ const AiTechStack = () => {
 
     return (
         <section className="py-20 md:py-40 bg-primary">
-            <div className="container px-4 mx-auto">
-                <div className="mx-auto max-w-5xl">
+            <div className="container mx-auto px-4">
+                <div className="max-w-5xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
-                        className="mb-20 text-center"
+                        className="text-center mb-20"
                     >
-                        <h2 className="text-5xl font-bold tracking-tighter text-white md:text-6xl lg:text-7xl">
-                            {content.services.ai.tech.title}
+                        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tighter">
+                            {content.services.socialAds.tech.title}
                         </h2>
                         <div className="space-y-6">
-                            <p className="text-3xl font-light tracking-tight text-gray-300/50">
-                                {content.services.ai.tech.subtitle}
+                            <p className="text-3xl font-light text-gray-300/50 tracking-tight">
+                                {content.services.socialAds.tech.subtitle}
                             </p>
-                            <p className="mx-auto max-w-3xl text-2xl font-light tracking-tight text-white md:text-3xl">
-                                {content.services.ai.tech.description}
+                            <p className="text-2xl md:text-3xl text-white font-light max-w-3xl mx-auto tracking-tight">
+                                {content.services.socialAds.tech.description}
                             </p>
                         </div>
                     </motion.div>
 
-                    <div className="space-y-4 md:hidden">
-                        {techStacks.map((stack, index) => (
+                    <div className="md:hidden space-y-4">
+                        {tabs.map((tab, index) => (
                             <motion.div
-                                key={stack.title}
+                                key={tab.title}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -90,8 +90,8 @@ const AiTechStack = () => {
                                                 : 'bg-white/10 border border-white/10 text-white'
                                             }`}
                                     >
-                                        <div className="flex justify-between items-center">
-                                            <div className="flex gap-4 items-center">
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center gap-4">
                                                 <div
                                                     className={
                                                         mobileExpanded === index
@@ -99,10 +99,10 @@ const AiTechStack = () => {
                                                             : 'text-white'
                                                     }
                                                 >
-                                                    {stack.icon}
+                                                    {tab.icon}
                                                 </div>
                                                 <h3 className="text-2xl font-bold tracking-tighter">
-                                                    {stack.title}
+                                                    {tab.title}
                                                 </h3>
                                             </div>
                                             <ChevronDown
@@ -123,17 +123,17 @@ const AiTechStack = () => {
                                             className="overflow-hidden"
                                         >
                                             <div className="p-6 pt-4 space-y-4">
-                                                <p className="text-lg font-semibold tracking-tight text-white/80">
-                                                    {stack.description}
+                                                <p className="text-lg font-semibold text-white/80 tracking-tight">
+                                                    {tab.description}
                                                 </p>
                                                 <div className="grid grid-cols-1 gap-2">
-                                                    {stack.points.map((point) => (
+                                                    {tab.points.map((point) => (
                                                         <div
                                                             key={point}
-                                                            className="flex gap-3 items-center px-4 py-3 rounded-xl border border-white/20 bg-white/5"
+                                                            className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/5 px-4 py-3"
                                                         >
-                                                            <span className="flex-shrink-0 w-3 h-3 rounded-full border border-white/80 bg-accent" />
-                                                            <span className="text-lg tracking-tight text-white/80">
+                                                            <span className="w-3 h-3 rounded-full border border-white/80 bg-accent flex-shrink-0" />
+                                                            <span className="text-lg text-white/80 tracking-tight">
                                                                 {point}
                                                             </span>
                                                         </div>
@@ -149,9 +149,9 @@ const AiTechStack = () => {
 
                     <div className="hidden md:block">
                         <div className="flex gap-4 justify-center mb-12">
-                            {techStacks.map((stack, index) => (
+                            {tabs.map((tab, index) => (
                                 <motion.button
-                                    key={stack.title}
+                                    key={tab.title}
                                     onClick={() => setActiveTab(index)}
                                     className={`flex items-center gap-3 px-8 py-4 rounded-xl tracking-tighter transition-all duration-300 text-left ${activeTab === index
                                             ? 'bg-white/20 border border-white/10 text-white '
@@ -163,10 +163,10 @@ const AiTechStack = () => {
                                             activeTab === index ? 'text-white' : 'text-white/90'
                                         }
                                     >
-                                        {stack.icon}
+                                        {tab.icon}
                                     </div>
                                     <span className="text-xl font-medium text-left">
-                                        {stack.title}
+                                        {tab.title}
                                     </span>
                                 </motion.button>
                             ))}
@@ -179,23 +179,23 @@ const AiTechStack = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -20 }}
                                 transition={{ duration: 0.3 }}
-                                className="p-12 rounded-3xl border bg-white/5 border-white/10"
+                                className="bg-white/5 border border-white/10 rounded-3xl p-12"
                             >
                                 <div className="mb-8">
-                                    <h3 className="mb-4 text-4xl font-bold tracking-tighter text-white md:text-6xl">
-                                        {techStacks[activeTab].title}
+                                    <h3 className="text-4xl md:text-6xl font-bold text-white tracking-tighter mb-4">
+                                        {tabs[activeTab].title}
                                     </h3>
-                                    <p className="mb-6 text-2xl tracking-tighter text-white/80">
-                                        {techStacks[activeTab].description}
+                                    <p className="text-2xl text-white/80 tracking-tighter mb-6">
+                                        {tabs[activeTab].description}
                                     </p>
                                     <div className="grid gap-3 md:grid-cols-2">
-                                        {techStacks[activeTab].points.map((point) => (
+                                        {tabs[activeTab].points.map((point) => (
                                             <div
                                                 key={point}
-                                                className="flex gap-3 items-center px-4 py-3 rounded-xl border border-white/20 bg-white/5"
+                                                className="flex items-center gap-3 rounded-xl border border-white/20 bg-white/5 px-4 py-3"
                                             >
-                                                <span className="flex-shrink-0 w-3 h-3 rounded-full border border-white/80 bg-accent" />
-                                                <span className="text-xl tracking-tight text-white/80">
+                                                <span className="w-3 h-3 rounded-full border border-white/80 bg-accent flex-shrink-0" />
+                                                <span className="text-xl text-white/80 tracking-tight">
                                                     {point}
                                                 </span>
                                             </div>
@@ -211,4 +211,4 @@ const AiTechStack = () => {
     );
 };
 
-export default AiTechStack;
+export default SocialAdsHowWeRunAds;

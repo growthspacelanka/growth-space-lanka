@@ -29,8 +29,8 @@ const navigation: NavigationItem[] = [
         label: content.nav.services,
         href: '#',
         submenu: [
-            { label: content.nav.webDev, href: '/services/web-development' },
-            { label: content.nav.ai, href: '/services/ai-solutions' },
+            { label: content.nav.webDev, href: '/services/business-website' },
+            { label: content.nav.ai, href: '/services/ecommerce-website' },
             { label: content.nav.socialMedia, href: '/services/social-media-management' },
             { label: content.nav.socialAds, href: '/services/social-media-ads' },
         ],

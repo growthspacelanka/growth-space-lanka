@@ -8,7 +8,7 @@ import WebDevPackages from '@/components/services/web-development/WebDevPackages
 import WebDevFAQ from '@/components/services/web-development/WebDevFAQ';
 import CTASection from '@/components/home/CTASection';
 
-export default function WebDevelopmentPage() {
+export default function BusinessWebsitePage() {
     return (
         <>
             <WebDevHero />

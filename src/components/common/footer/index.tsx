@@ -85,12 +85,12 @@ const Footer: React.FC = () => {
                             <h3 className="text-2xl tracking-tighter font-bold mb-6">{content.footer.services}</h3>
                             <ul className="space-y-4">
                                 <li>
-                                    <Link href="/services/web-development" className="text-gray-500 tracking-tighter text-lg hover:text-primary transition-colors">
+                                    <Link href="/services/business-website" className="text-gray-500 tracking-tighter text-lg hover:text-primary transition-colors">
                                         {content.footer.webDev}
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/services/ai-solutions" className="text-gray-500 tracking-tighter text-lg hover:text-primary transition-colors">
+                                    <Link href="/services/ecommerce-website" className="text-gray-500 tracking-tighter text-lg hover:text-primary transition-colors">
                                         {content.footer.ai}
                                     </Link>
                                 </li>

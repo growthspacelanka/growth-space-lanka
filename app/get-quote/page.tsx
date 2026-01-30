@@ -20,11 +20,11 @@ export default function GetQuoteRedirect() {
     }
   }, [mounted, router]);
 
-  return (
+    return (
     <main className="flex h-full items-center justify-center min-h-screen">
       <div className="text-center">
         <p className="text-lg">Redirecting...</p>
-      </div>
+                        </div>
     </main>
   );
 }

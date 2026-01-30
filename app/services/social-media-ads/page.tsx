@@ -2,23 +2,28 @@
 
 import React from 'react';
 import SocialAdsHero from '@/components/services/social-media-ads/SocialAdsHero';
+import SocialAdsFeatures from '@/components/services/social-media-ads/SocialAdsFeatures';
+import SocialAdsHowWeRunAds from '@/components/services/social-media-ads/SocialAdsHowWeRunAds';
+import SocialAdsPackages from '@/components/services/social-media-ads/SocialAdsPackages';
+import SocialAdsFAQ from '@/components/services/social-media-ads/SocialAdsFAQ';
 import CTASection from '@/components/home/CTASection';
+import { content } from '@/content';
 
 export default function SocialMediaAdsPage() {
+    const cta = content.services.socialAds.cta;
     return (
         <>
             <SocialAdsHero />
-            {/* Placeholder content - to be optimized later */}
-            <section className="py-20 md:py-40 bg-white">
-                <div className="container mx-auto px-4">
-                    <div className="max-w-5xl mx-auto text-center">
-                        <p className="text-xl text-gray-500 font-light">
-                            Content coming soon. This page will be optimized with detailed information about our Social Media Ads packages.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <CTASection />
+            <SocialAdsFeatures />
+            <SocialAdsHowWeRunAds />
+            <SocialAdsPackages />
+            <SocialAdsFAQ />
+            <CTASection
+                title={cta.title}
+                description={cta.description}
+                button={cta.button}
+                href="/book-a-call"
+            />
         </>
     );
 }

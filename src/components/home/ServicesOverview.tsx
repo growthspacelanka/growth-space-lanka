@@ -19,13 +19,13 @@ const services: ServiceItem[] = [
         icon: <Code2 className="w-10 h-10" />,
         title: content.services.webdev.title,
         description: content.services.webdev.description,
-        href: '/services/web-development'
+        href: '/services/business-website'
     },
     {
         icon: <Bot className="w-10 h-10" />,
         title: content.services.ai.title,
         description: content.services.ai.description,
-        href: '/services/ai-solutions'
+        href: '/services/ecommerce-website'
     },
     {
         icon: <Share2 className="w-10 h-10" />,

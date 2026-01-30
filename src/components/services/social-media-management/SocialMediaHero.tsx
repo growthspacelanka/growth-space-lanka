@@ -5,12 +5,7 @@ import PageHeader from '@/components/common/PageHeader';
 import { content } from '@/content';
 
 const SocialMediaHero = () => {
-    return (
-        <PageHeader
-            title={content.services.socialMedia.page.title}
-            description={content.services.socialMedia.page.description}
-        />
-    );
+    return <PageHeader title={content.services.socialMedia.page.title} />;
 };
 
 export default SocialMediaHero;

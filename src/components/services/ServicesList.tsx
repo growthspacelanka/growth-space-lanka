@@ -25,7 +25,7 @@ const services: ServiceItem[] = [
             'services.webdev.feature2',
             'services.webdev.feature3'
         ],
-        href: '/services/web-development'
+        href: '/services/business-website'
     },
     {
         icon: <Bot className="w-10 h-10" />,
@@ -36,7 +36,7 @@ const services: ServiceItem[] = [
             'services.ai.feature2',
             'services.ai.feature3'
         ],
-        href: '/services/ai-solutions'
+        href: '/services/ecommerce-website'
     }
 ];
 
