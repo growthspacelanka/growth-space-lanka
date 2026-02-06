@@ -28,9 +28,16 @@ const AboutPreview: React.FC = () => {
                             <p className="text-3xl font-light text-gray-300 tracking-tight">
                                 {content.about.subtitle}
                             </p>
-                            <p className="text-2xl md:text-3xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight">
-                                {content.about.description}
-                            </p>
+                            <div className="space-y-6">
+                                {content.about.paragraphs.map((paragraph, index) => (
+                                    <p
+                                        key={index}
+                                        className="text-2xl md:text-3xl text-gray-500 font-light max-w-3xl mx-auto tracking-tight"
+                                    >
+                                        {paragraph}
+                                    </p>
+                                ))}
+                            </div>
                         </div>
 
                         <motion.div
@@ -41,7 +48,7 @@ const AboutPreview: React.FC = () => {
                             className="mt-12"
                         >
                             <Link
-                                href="/about"
+                                href="/book-a-call"
                                 className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white rounded-full text-2xl tracking-tight hover:bg-accent/90 transition-colors duration-200 group"
                             >
                                 {content.about.cta}

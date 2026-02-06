@@ -2,16 +2,14 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useTranslation } from '@/hooks/useTranslation';
+import { content } from '@/content';
 import { Telescope, Target } from 'lucide-react';
 
 const VisionMission = () => {
-    const { t } = useTranslation();
-
     return (
         <section className="pb-20 md:pb-30 bg-white">
             <div className="container mx-auto px-4">
-                <div className="max-w-5xl mx-auto">
+                <div className="max-w-7xl mx-auto">
                     {/* Vision & Mission Grid */}
                     <div className="grid md:grid-cols-2 gap-8">
                         {/* Vision Card */}
@@ -26,10 +24,20 @@ const VisionMission = () => {
                                 <Telescope className="w-10 h-10" />
                             </div>
                             <h3 className="text-4xl md:text-5xl font-bold mb-6 text-white tracking-tighter">
-                                {t('about.vision.title')}
+                                {content.about.vision.title}
                             </h3>
-                            <p className="text-xl text-white/70 font-light tracking-tighter">
-                                {t('about.vision.statement')}
+                            <p className="text-2xl md:text-3xl text-white/70 font-light tracking-tight">
+                                {content.about.vision.statementBold
+                                    ? (
+                                        <>
+                                            {content.about.vision.statement.split(content.about.vision.statementBold)[0]}
+                                            <strong className="text-white/90 font-semibold">
+                                                {content.about.vision.statementBold}
+                                            </strong>
+                                            {content.about.vision.statement.split(content.about.vision.statementBold)[1]}
+                                        </>
+                                    )
+                                    : content.about.vision.statement}
                             </p>
                         </motion.div>
 
@@ -45,10 +53,10 @@ const VisionMission = () => {
                                 <Target className="w-10 h-10" />
                             </div>
                             <h3 className="text-4xl md:text-5xl font-bold mb-6 text-white tracking-tighter">
-                                {t('about.mission.title')}
+                                {content.about.mission.title}
                             </h3>
-                            <p className="text-xl text-white/70 font-light tracking-tighter">
-                                {t('about.mission.statement')}
+                            <p className="text-2xl md:text-3xl text-white/70 font-light tracking-tight">
+                                {content.about.mission.statement}
                             </p>
                         </motion.div>
                     </div>

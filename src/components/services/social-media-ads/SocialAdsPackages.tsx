@@ -86,7 +86,7 @@ const SocialAdsPackages = () => {
                                     href={pkg.stripeLink}
                                     className="mt-auto w-full px-5 py-3 bg-primary text-white rounded-full text-xl font-medium tracking-tighter text-center hover:bg-primary/90 transition-colors duration-200"
                                 >
-                                    {pkg.name === 'Custom Ads' ? 'Contact Us' : 'Proceed to Payment'}
+                                    Proceed to Payment
                                 </Link>
                             </motion.div>
                         ))}

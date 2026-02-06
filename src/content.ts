@@ -1133,62 +1133,59 @@ export const content = {
         description:
           'Package prices are management fees only. Ad spend is paid directly by you to Meta (Facebook/Instagram). We handle strategy, setup, monitoring, and optimisation within your selected scope.',
         pricingNote:
-          'All prices are monthly management fees. Ad spend is paid directly by you to the ad platform. No hidden costs.',
+          'All prices are monthly management fees. Ad spend is paid directly by the client to the advertising platform. No hidden costs or commissions on ad spend.',
         items: [
           {
-            name: 'Starter Ads Package',
-            bestFor: 'For small businesses running paid ads for the first time and testing how their audience responds.',
-            price: 'LKR 9,999 / month',
+            name: 'Starter Ads',
+            bestFor: 'For businesses running paid ads for the first time to test audience response and validate demand.',
+            price: 'LKR 4,999 / month',
             stripeLink: '/payment/ads-starter',
             includes: [
-              '1 campaign',
+              '1 active ad campaign',
               '1–2 ad creatives',
               'Basic audience targeting',
-              'Budget up to LKR 50,000',
+              'Ad spend handling up to LKR 50,000',
               'Performance monitoring',
             ],
-            goodToKnow: 'Best for testing response and understanding ad behaviour.',
           },
           {
-            name: 'Growth Ads Package',
-            bestFor: 'For businesses consistently running ads and looking to improve lead quality, targeting, and performance.',
-            price: 'LKR 19,999 / month',
+            name: 'Growth Ads',
+            bestFor: 'For businesses actively running ads and looking to improve lead quality through testing and optimisation.',
+            price: 'LKR 9,999 / month',
             stripeLink: '/payment/ads-growth',
             includes: [
-              'Up to 3 campaigns',
+              'Up to 3 active ad campaigns',
               'Multiple ad creatives',
-              'Audience testing',
-              'Budget up to LKR 150,000',
+              'Audience testing and refinement',
+              'Ad spend handling up to LKR 100,000',
               'Regular optimisation',
             ],
-            goodToKnow: 'Suitable for consistent monthly ad activity.',
           },
           {
-            name: 'Professional Ads Package',
-            bestFor: 'For established businesses managing multiple campaigns and higher budgets with a focus on optimisation and control.',
-            price: 'LKR 34,999 / month',
+            name: 'Advanced Ads',
+            bestFor: 'For businesses scaling ads with higher budgets, and continuous performance optimisation.',
+            price: 'LKR 14,999 / month',
             stripeLink: '/payment/ads-professional',
             includes: [
-              'Multiple campaigns',
-              'Advanced targeting',
-              'Creative testing',
-              'Higher budget handling',
-              'Priority optimisation',
+              'Up to 5 active ad campaigns',
+              'Advanced audience targeting',
+              'Creative testing and optimisation',
+              'Ad spend handling up to LKR 200,000',
+              'Priority optimisation and monitoring',
             ],
-            goodToKnow: 'Designed for sustained advertising performance.',
           },
           {
-            name: 'Custom Ads Package',
-            bestFor: 'For businesses with advanced requirements, large budgets, or industry-specific advertising strategies.',
+            name: 'Custom Ads',
+            bestFor: 'For businesses with large budgets, advanced funnels, or industry-specific advertising requirements.',
             price: 'Custom pricing',
             stripeLink: '/book-a-call',
             includes: [
-              'High-budget campaigns',
-              'Industry-specific strategy',
-              'Special objectives',
-              'Custom reporting',
+              'Custom campaign volume',
+              'Advanced strategies and objectives',
+              'Industry-specific targeting',
+              'Custom reporting and optimisation',
+              'Dedicated planning and execution',
             ],
-            goodToKnow: 'Requires discussion before confirmation.',
           },
         ],
       },
@@ -1314,10 +1311,86 @@ export const content = {
 
   // About
   about: {
-    title: 'About Us',
-    subtitle: 'Why we exist',
-    description: 'We help Sri Lankan small and medium businesses get online with fixed website packages. Clear process. Guided setup. No technical knowledge required.',
-    cta: 'Start Website Setup',
+    title: 'ABOUT GROWTH SPACE LANKA',
+    subtitle: '',
+    // Home page About preview (paragraphs + CTA)
+    paragraphs: [
+      'Growth Space Lanka was built to solve a simple problem: getting a business online in Sri Lanka shouldn\'t be complicated.',
+      'We offer fixed packages, clear scope, and a guided setup process—so you know what you\'re getting, how long it takes, and what happens next.',
+      'No guesswork. No hidden costs. Just straightforward execution for Sri Lankan businesses.',
+    ],
+    cta: 'BOOK A CALL',
+    // About page sections
+    story: {
+      title: 'OUR STORY',
+      subtitle: 'How we got here',
+      content1:
+        'Growth Space Lanka was built to solve a simple problem: getting a business online in Sri Lanka shouldn\'t be complicated.',
+      content2:
+        'Many businesses struggle with unclear pricing, long timelines, and confusing technical processes when trying to build or manage their digital presence.',
+      content3:
+        'We created a fixed-package service model with clearly defined scope, transparent pricing, and a guided setup process—so business owners know exactly what they\'re getting, how long it takes, and what happens next.',
+      content4:
+        'No guesswork. No hidden costs. Just straightforward execution that helps businesses get online and grow with confidence.',
+    },
+    vision: {
+      title: 'VISION',
+      statement:
+        'To help 10,000+ Sri Lankan small and medium businesses get online faster — with clear pricing, simple processes, and zero technical confusion.',
+      statementBold: '10,000+ Sri Lankan small and medium businesses',
+    },
+    mission: {
+      title: 'MISSION',
+      statement:
+        'We deliver clearly defined digital services through fixed packages, guided onboarding, and reliable execution — so businesses can focus on running and growing their operations while we handle the technical work.',
+    },
+    team: {
+      title: 'OUR TEAM',
+      subtitle: 'The people behind Growth Space Lanka',
+      description:
+        'A small, focused team dedicated to helping Sri Lankan businesses get online without confusion.',
+      supportingLine:
+        'Supported by a distributed team of 15+ designers, developers, and marketers working remotely and in person across different parts of the country to deliver consistent, high-quality work.',
+      supportingLineBold: '15+ designers, developers, and marketers',
+      members: [
+        {
+          name: 'Prashan',
+          role: 'Strategist & Developer',
+          imageUrl: '/prashan_img.png',
+        },
+        {
+          name: 'Thanu',
+          role: 'Developer & Marketer',
+          imageUrl: '/thanu_img.png',
+        },
+        {
+          name: 'Tamil',
+          role: 'Developer & Marketer',
+          imageUrl: '/tamil_img.png',
+        },
+        {
+          name: 'Shobs',
+          role: 'Developer',
+          imageUrl: '/Shobs-img.png',
+        },
+        {
+          name: 'Shree',
+          role: 'Developer',
+          imageUrl: '/shree_img.png',
+        },
+        {
+          name: 'Karthik',
+          role: 'Developer',
+          imageUrl: '/karthik_img.png',
+        },
+      ],
+    },
+    ctaSection: {
+      title: 'READY TO GET YOUR BUSINESS ONLINE?',
+      description:
+        'Schedule a short call to discuss your goals and get a clear recommendation. We\'ll help you choose the right package and next steps—no pressure, no jargon.',
+      button: 'BOOK A CALL',
+    },
   },
 
   // Testimonials
@@ -1387,7 +1460,8 @@ export const content = {
   // CTA Section
   cta: {
     title: 'Ready to Get Your Business Online?',
-    description: 'Choose a package, share your business details, and we\'ll build your website. Simple form. Fast setup. Clear pricing.',
+    description:
+      'Pick a package that fits your business, share your details in a simple form, and we handle the rest. Fixed pricing. Guided setup. No technical hassle.',
     button: 'Start Website Setup',
   },
 
